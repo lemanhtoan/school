@@ -1,0 +1,31 @@
+/*table khoa*/
+CREATE TABLE khoa (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+ten_khoa VARCHAR(255) NOT NULL
+);
+
+/*table bo_mon*/
+CREATE TABLE bo_mon (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+ten_mon VARCHAR(255) NOT NULL,
+mota TEXT,
+khoa_id INT(6)
+);
+
+/*table giang_vien*/
+CREATE TABLE giang_vien (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+ma_giang_vien VARCHAR(255) NOT NULL,
+ho_ten VARCHAR(255) NOT NULL,
+khoa_id INT(6),
+bo_mon_id INT(6),
+email VARCHAR(255)
+);
+
+/*table nguoi_dung*/
+CREATE TABLE nguoi_dung (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+email VARCHAR(255) NOT NULL,
+password VARCHAR(255) NOT NULL,
+thong_tin_khac TEXT
+);
