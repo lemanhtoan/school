@@ -18,6 +18,7 @@ class KhoaController {
         $op = isset($_GET['op'])?$_GET['op']:NULL;
         try {
             if ( !$op || $op == 'list' ) {
+                var_dump($op) ;
                 $this->listKhoa();
             } elseif ( $op == 'new' ) {
                 $this->saveKhoa();
@@ -55,12 +56,9 @@ class KhoaController {
         
         if ( isset($_POST['form-submitted']) ) {
             $name       = isset($_POST['name']) ?   $_POST['name']  :NULL;
-            $phone      = isset($_POST['phone'])?   $_POST['phone'] :NULL;
-            $email      = isset($_POST['email'])?   $_POST['email'] :NULL;
-            $address    = isset($_POST['address'])? $_POST['address']:NULL;
-            
+
             try {
-                $this->contactsService->createNewContact($name, $phone, $email, $address);
+                $this->khoaService->createNewKhoa($name);
                 $this->redirect('index.php');
                 return;
             } catch (ValidationException $e) {
@@ -68,37 +66,34 @@ class KhoaController {
             }
         }
         
-        include 'view/contact-form.php';
+        include 'view/khoa/khoa-form.php';
     }
     
-    public function deleteContact() {
+    public function deleteKhoa() {
         $id = isset($_GET['id'])?$_GET['id']:NULL;
         if ( !$id ) {
             throw new Exception('Internal error.');
         }
         
-        $this->contactsService->deleteContact($id);
+        $this->khoaService->deleteKhoa($id);
         
         $this->redirect('index.php');
     }
     
-    public function showContact() {
+    public function showKhoa() {
         $id = isset($_GET['id'])?$_GET['id']:NULL;
         if ( !$id ) {
             throw new Exception('Internal error.');
         }
-        $contact = $this->contactsService->getContact($id);
-        
-        include 'view/contact.php';
+        $data = $this->khoaService->getKhoa($id);
+
+        include 'view/khoa/khoa.php';
     }
 
-    public function editContact() {
+    public function editKhoa() {
         $title = 'Edit contact';
 
         $name = '';
-        $phone = '';
-        $email = '';
-        $address = '';
 
         $errors = array();
 
@@ -106,15 +101,13 @@ class KhoaController {
         if ( !$id ) {
             throw new Exception('Internal error.');
         }
-        $contact = $this->contactsService->getContact($id);
+        $contact = $this->khoaService->getKhoa($id);
 
         if ( isset($_POST['form-submitted']) ) {
             $name       = isset($_POST['name']) ?   $_POST['name']  :NULL;
-            $phone      = isset($_POST['phone'])?   $_POST['phone'] :NULL;
-            $email      = isset($_POST['email'])?   $_POST['email'] :NULL;
-            $address    = isset($_POST['address'])? $_POST['address']:NULL;
+
             try {
-                $this->contactsService->updateContact($id, $name, $phone, $email, $address);
+                $this->khoaService->updateKhoa($id, $name);
                 $this->redirect('index.php');
                 return;
             } catch (ValidationException $e) {
@@ -122,7 +115,7 @@ class KhoaController {
             }
         }
 
-        include 'view/contact-form.php';
+        include 'view/khoa/khoa-form.php';
     }
     
     public function showError($title, $message) {

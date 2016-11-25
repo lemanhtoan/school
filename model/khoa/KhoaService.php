@@ -52,7 +52,7 @@ class KhoaService {
         return $this->khoaGateway->find($id);
     }
     
-    private function validateContactParams( $name, $phone, $email, $address ) {
+    private function validateKhoaParams( $name ) {
         $errors = array();
         if ( !isset($name) || empty($name) ) {
             $errors[] = 'Name is required';
