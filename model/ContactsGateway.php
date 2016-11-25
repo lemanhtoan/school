@@ -1,4 +1,4 @@
-<?php
+ContactsGateway.php<?php
 
 /**
  * Table data gateway.

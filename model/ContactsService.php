@@ -9,7 +9,7 @@ class ContactsService {
     private $contactsGateway    = NULL;
     
     private function openDb() {
-        if (!mysql_connect("localhost", "root", "123456a@")) {
+        if (!mysql_connect("localhost", "root", "")) {
             throw new Exception("Connection to the database server failed!");
         }
         if (!mysql_select_db("school")) {
