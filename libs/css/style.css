@@ -1,0 +1,7 @@
+.errors {
+    margin: 0;
+    padding: 0;
+}
+.errors li {
+    list-style: none;
+}

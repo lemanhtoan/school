@@ -2,9 +2,9 @@
 <?php
 ini_set("display_errors", 1);
 
-require_once 'controller/ContactsController.php';
+require_once 'controller/IndexController.php';
 
-$controller = new ContactsController();
+$controller = new IndexController();
 
 $controller->handleRequest();
 

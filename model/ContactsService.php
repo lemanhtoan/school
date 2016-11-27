@@ -6,8 +6,6 @@ require_once 'model/ValidationException.php';
 
 class ContactsService {
     
-    private $contactsGateway    = NULL;
-    
     private function openDb() {
         if (!mysql_connect("localhost", "root", "123456a@")) {
             throw new Exception("Connection to the database server failed!");
