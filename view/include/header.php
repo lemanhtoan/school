@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="libs/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="libs/js/bootstrap.min.js"></script>
+    <script src="libs/js/bootstrap-datepicker.js"></script>
+    <script src="libs/js/script.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -34,13 +36,16 @@
                     <?php if (isset($_SESSION['user_session'])) { ?>
                     <li><a href="index.php?op=user_info">Profile</a></li>
                     <li><a href="index.php?op=user_logout">Logout</a></li>
+                    <li><a href="index.php?op=user_changepassword">Đổi mật khẩu</a></li>
                     <?php } else { ?>
                     <li><a href="index.php?op=user_login">Login</a></li>
                     <li><a href="index.php?op=user_register">Register</a></li>
                     <?php } ?>
                 </ul>
             </li>
-            <li><a href="index.php?op=import_student">Import user</a></li>
+            <li><a href="index.php?op=import_gv">Import GV</a></li>
+            <li><a href="index.php?op=import_sv">Import SV</a></li>
+            <li><a href="index.php?op=khoahoc_list">Quản lý Khóa học</a></li>
         </ul>
     </div>
 </nav>

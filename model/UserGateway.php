@@ -72,33 +72,40 @@ class UserGateway {
         return mysql_fetch_object($dbres);
     }
 
-    public function selectByEmailUser($id) {
-        var_dump("SELECT * FROM nguoi_dung WHERE id = $id");die;
-        $dbres = mysql_query("SELECT * FROM nguoi_dung WHERE id = $id");
-        return mysql_result($dbres);
-    }
-
-    public function insertGiangVien($colMaGV, $colName, $colKhoa, $colBoMon, $createId) {
+    public function insertGiangVien($colMaGV, $colName, $colKhoa, $colBoMon, $email) {
         $colMaGV = ($colMaGV != NULL)?"'".mysql_real_escape_string($colMaGV)."'":'NULL';
         $colName = ($colName != NULL)?"'".mysql_real_escape_string($colName)."'":'NULL';
         $colKhoa = ($colKhoa != NULL)?"'".mysql_real_escape_string($colKhoa)."'":'NULL';
         $colBoMon = ($colBoMon != NULL)?"'".mysql_real_escape_string($colBoMon)."'":'NULL';
-        $createId = ($createId != NULL)?"'".mysql_real_escape_string($createId)."'":'NULL';
+        $email = ($email != NULL)?"'".mysql_real_escape_string($email)."'":'NULL';
         if (($this->selectByIdGiangVien($colMaGV)) != false) {
             return 'USER_EXIST';
         }
-        mysql_query("INSERT INTO giang_vien (ma_giang_vien, ho_ten, khoa_id, bo_mon_id, user_id) VALUES ($colMaGV, $colName, $colKhoa, $colBoMon, $createId)");
+        mysql_query("INSERT INTO giang_vien (ma_giang_vien, ho_ten, khoa_id, bo_mon_id, email) VALUES ($colMaGV, $colName, $colKhoa, $colBoMon, $email)");
+        return mysql_insert_id();
+    }
 
-        // save user_verified
-        $keyVerified = md5(uniqid("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", true));
-        var_dump($this->selectByEmailUser(mysql_insert_id()));die;
-        $data = array(
-            "email" => selectByEmailUser(mysql_insert_id()),
-            "active" => 0,
-            "hash" => $keyVerified,
-            "created_at" => date("Y-m-d H:i:s")
-        );
-        $this->saveVerifiedEmail($data);
+    public function changePassUser($password, $userId) {
+        $dbPass = ($password != NULL)?"'".mysql_real_escape_string($password)."'":'NULL';
+        mysql_query("UPDATE nguoi_dung SET password = md5($dbPass) WHERE id = '$userId'");
+        return $userId;
+    }
+
+    public function selectByIdSinhVien($id) {
+        $dbres = mysql_query("SELECT * FROM sinh_vien WHERE ma_sinh_vien = $id");
+        return mysql_fetch_object($dbres);
+    }
+
+    public function insertSinhVien($colMaSV, $colName, $colKhoaHoc, $colCTHoc, $colEmail) {
+        $colMaSV = ($colMaSV != NULL)?"'".mysql_real_escape_string($colMaSV)."'":'NULL';
+        $colName = ($colName != NULL)?"'".mysql_real_escape_string($colName)."'":'NULL';
+        $colKhoaHoc = ($colKhoaHoc != NULL)?"'".mysql_real_escape_string($colKhoaHoc)."'":'NULL';
+        $colCTHoc = ($colCTHoc != NULL)?"'".mysql_real_escape_string($colCTHoc)."'":'NULL';
+        $colEmail = ($colEmail != NULL)?"'".mysql_real_escape_string($colEmail)."'":'NULL';
+        if (($this->selectByIdSinhVien($colEmail)) != false) {
+            return 'USER_EXIST';
+        }
+        mysql_query("INSERT INTO sinh_vien (ma_sinh_vien, ho_ten, khoa_hoc_id, chuong_trinh_id, email) VALUES ($colMaSV, $colName, $colKhoaHoc, $colCTHoc, $colEmail)");
         return mysql_insert_id();
     }
 }

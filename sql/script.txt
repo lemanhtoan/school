@@ -27,5 +27,46 @@ CREATE TABLE nguoi_dung (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 email VARCHAR(255) NOT NULL,
 password VARCHAR(255) NOT NULL,
-thong_tin_khac TEXT
+thong_tin_khac TEXT,
+status INT(1),
+user_type INT(1)
+);
+
+/*table user_verified*/
+CREATE TABLE user_verified (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+email VARCHAR(255) NOT NULL,
+hash VARCHAR(255) NOT NULL,
+active INT(1),
+created_at DATE
+);
+
+/*table sinh_vien*/
+CREATE TABLE sinh_vien (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+ma_sinh_vien VARCHAR(255) NOT NULL,
+ho_ten VARCHAR(255) NOT NULL,
+khoa_hoc_id INT(6),
+chuong_trinh_id INT(6),
+email VARCHAR(255)
+);
+
+/*table khoa_hoc*/
+CREATE TABLE khoa_hoc (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+ma_khoa_hoc VARCHAR(255) NOT NULL,
+ten_khoa_hoc VARCHAR(255) NOT NULL,
+khoa_id INT(6),
+ghi_chu VARCHAR(255),
+time_start DATE,
+time_end DATE
+);
+
+/*table chuong_trinh_hoc*/
+CREATE TABLE chuong_trinh_hoc (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+ten_chuong_trinh VARCHAR(255) NOT NULL,
+khoa_hoc_id VARCHAR(255) NOT NULL,
+ghi_chu VARCHAR(255),
+total_time INT(6)
 );

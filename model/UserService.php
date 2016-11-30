@@ -46,8 +46,8 @@ class UserService {
                 return $res;
             }
             // sent email active link - later
-            //$resUser = $this->userGateway->selectById($res);
-            //$this->verifiedEmail($resUser->email);
+            $resUser = $this->userGateway->selectById($res);
+            $this->verifiedEmail($resUser->email);
 
             $this->index->closeDb();
             return $res;
@@ -95,8 +95,6 @@ class UserService {
     public function verifiedEmail($email)
     {
         $keyVerified = md5(uniqid("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", true));
-        $emailSentFrom = 'adcskt@gmail.com';
-        $emaiNameFrom = 'School manager';
         $data = array(
             "email" => $email,
             "active" => 0,
@@ -112,13 +110,12 @@ class UserService {
                 $verificationLink = $serverUrl."activate.php?hash=" . $keyVerified;
                 $body = "Hi customer, click to link active your account " . $verificationLink;
                 $subject = "Email verify account";
-                $headers = "From: $emailSentFrom" . "\r\n";
-                if (mail($data['email'], $subject, $body, $headers)) {
+                $headers = "From: adcskt@gmail.com" . "\r\n" .
+                    "CC: toanktv.it@gmail.com";
+                if (mail($email, $subject, $body, $headers)) {
                     echo ("Message successfully sent!");
-                    die('1');
                 } else {
                     echo ("Message delivery failed...");
-                    die('0');
                 }
             }
             $this->index->closeDb();
@@ -128,18 +125,42 @@ class UserService {
         }
         }
 
-    public function createGiangVien($colMaGV, $colName, $colKhoa, $colBoMon, $createId) {
+    public function createGiangVien($colMaGV, $colName, $colKhoa, $colBoMon, $email) {
         try {
             $this->index->openDb();
             $this->validateParams($colMaGV);
-            $res = $this->userGateway->insertGiangVien($colMaGV, $colName, $colKhoa, $colBoMon, $createId);
+            $res = $this->userGateway->insertGiangVien($colMaGV, $colName, $colKhoa, $colBoMon, $email);
             if ($res == 'USER_EXIST') {
                 return $res;
             }
-            // sent email active link - later
-            //$resUser = $this->userGateway->selectById($res);
-            //$this->verifiedEmail($resUser->email);
+            $this->index->closeDb();
+            return $res;
+        } catch (Exception $e) {
+            $this->index->closeDb();
+            throw $e;
+        }
+    }
 
+    public function changePassUser($password, $userId) {
+        try {
+            $this->index->openDb();
+            $res = $this->userGateway->changePassUser($password, $userId);
+            $this->index->closeDb();
+            return $res;
+        } catch (Exception $e) {
+            $this->index->closeDb();
+            throw $e;
+        }
+    }
+
+    public function createSinhVien($colMaSV, $colName, $colKhoaHoc, $colCTHoc, $colEmail) {
+        try {
+            $this->index->openDb();
+            $this->validateParams($colMaSV);
+            $res = $this->userGateway->insertSinhVien($colMaSV, $colName, $colKhoaHoc, $colCTHoc, $colEmail);
+            if ($res == 'USER_EXIST') {
+                return $res;
+            }
             $this->index->closeDb();
             return $res;
         } catch (Exception $e) {

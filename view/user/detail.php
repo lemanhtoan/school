@@ -13,6 +13,7 @@
         <h3>Email: <?php echo $data->email; ?></h3>
         <p>Kiểu người dùng: <?php echo $dataType; ?></p>
         <p>Thông tin khác: <?php echo $data->thong_tin_khac; ?></p>
+<!--        <a href="index.php?op=user_edit" class="btn btn-info"> Edit </a>-->
     <?php endif; ?>
 </div>
 <?php require_once(realpath($_SERVER["DOCUMENT_ROOT"]) .'/school/view/include/footer.php');?>
