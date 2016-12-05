@@ -25,7 +25,14 @@
                 <td><?php echo $i;?></td>
                 <td><a href="index.php?op=khoahoc_show&id=<?php echo $item->id; ?>"><?php echo $item->ma_khoa_hoc; ?></a></td>
                 <td><a href="index.php?op=khoahoc_show&id=<?php echo $item->id; ?>"><?php echo $item->ten_khoa_hoc; ?></a></td>
-                <td><a href="index.php?op=khoahoc_show&id=<?php echo $item->id; ?>"><?php echo $item->khoa_id; ?></a></td>
+                <td>
+                    <a href="index.php?op=khoa_show&id=<?php echo $item->khoa_id; ?>">
+                        <?php foreach ($khoaList as $khoa) {
+                            if ( $item->khoa_id == $khoa->id ) {
+                                echo $khoa->ten_khoa;
+                            }
+                        }; ?>
+                    </a></td>
                 <td><?php echo $item->time_start; ?></td>
                 <td><?php echo $item->time_end; ?></td>
                 <td><?php echo $item->ghi_chu; ?></td>

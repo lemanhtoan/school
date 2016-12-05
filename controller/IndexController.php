@@ -3,18 +3,30 @@ require_once 'model/KhoaService.php';
 require_once 'model/UserService.php';
 require_once 'model/Pagination.php';
 require_once 'model/KhoaHocService.php';
+require_once 'model/ChuongTrinhService.php';
+require_once 'model/GVService.php';
+require_once 'model/SVService.php';
+require_once 'model/BoMonService.php';
 
 class IndexController {
     private $indexService = NULL;
     private $khoaService = NULL;
     private $userService = NULL;
     private $khoahocService = NULL;
+    private $chuongtrinhService = NULL;
+    private $GVService = NULL;
+    private $SVService = NULL;
+    private $boMonService = NULL;
 
     public function __construct() {
         $this->indexService = new IndexService();
         $this->khoaService = new KhoaService();
         $this->userService = new UserService();
         $this->khoahocService = new KhoaHocService();
+        $this->chuongtrinhService = new ChuongTrinhService();
+        $this->GVService = new GVService();
+        $this->SVService = new SVService();
+        $this->boMonService = new BoMonService();
     }
 
     public function redirect($location, $error='') {
@@ -66,6 +78,54 @@ class IndexController {
                 $this->deleteKhoaHoc();
             } elseif (strpos($op, "khoahoc_list") !== false) { // pagination
                 $this->listKhoaHoc();
+            } elseif ($op == 'chuongtrinh_list') {
+                $this->listChuongTrinh();
+            } elseif ($op == 'chuongtrinh_new') {
+                $this->saveChuongTrinh();
+            } elseif ($op == 'chuongtrinh_show') {
+                $this->showChuongTrinh();
+            } elseif ($op == 'chuongtrinh_edit') {
+                $this->editChuongTrinh();
+            } elseif ($op == 'chuongtrinh_delete') {
+                $this->deleteChuongTrinh();
+            } elseif (strpos($op, "chuongtrinh_list") !== false) { // pagination
+                $this->listChuongTrinh();
+            } elseif ($op == 'gv_list') {
+                $this->listGV();
+            } elseif ($op == 'gv_new') {
+                $this->saveGV();
+            } elseif ($op == 'gv_show') {
+                $this->showGV();
+            } elseif ($op == 'gv_edit') {
+                $this->editGV();
+            } elseif ($op == 'gv_delete') {
+                $this->deleteGV();
+            } elseif (strpos($op, "gv_list") !== false) { // pagination
+                $this->listGV();
+            } elseif ($op == 'sv_list') {
+                $this->listSV();
+            } elseif ($op == 'sv_new') {
+                $this->saveSV();
+            } elseif ($op == 'sv_show') {
+                $this->showSV();
+            } elseif ($op == 'sv_edit') {
+                $this->editSV();
+            } elseif ($op == 'sv_delete') {
+                $this->deleteSV();
+            } elseif (strpos($op, "sv_list") !== false) { // pagination
+                $this->listSV();
+            } elseif ($op == 'bomon_list') {
+                $this->listBoMon();
+            } elseif ($op == 'bomon_new') {
+                $this->saveBoMon();
+            } elseif ($op == 'bomon_show') {
+                $this->showBoMon();
+            } elseif ($op == 'bomon_edit') {
+                $this->editBoMon();
+            } elseif ($op == 'bomon_delete') {
+                $this->deleteBoMon();
+            } elseif (strpos($op, "bomon_list") !== false) { // pagination
+                $this->listBoMon();
             } else {
                 $this->showError("Page not found", "Page for operation ".$op." was not found!");
             }
@@ -332,6 +392,7 @@ class IndexController {
         $start = $Pagination->start();
         $totalPages = $Pagination->totalPages($totalRecord);
         $data = $this->khoahocService->getAll($orderby, $start, $limit);
+        $khoaList = $this->khoaService->getAll('id',0,300);
         include 'view/khoahoc/list.php';
     }
 
@@ -406,5 +467,337 @@ class IndexController {
     }
 
     /*END KHOA HOC ACTION ROUTER*/
+
+    /*BO MON ACTION ROUTER*/
+    public function listBoMon() {
+        $orderby = isset($_GET['orderby'])?$_GET['orderby']:NULL;
+        $totalRecord = $this->boMonService->totalRecord();
+        $Pagination = new Pagination();
+        $limit = $Pagination->limit;
+        $start = $Pagination->start();
+        $totalPages = $Pagination->totalPages($totalRecord);
+        $data = $this->boMonService->getAll($orderby, $start, $limit);
+        $khoaList = $this->khoaService->getAll('id',0,300);
+        include 'view/bomon/list.php';
+    }
+
+    public function saveBoMon() {
+        $title = 'Add new';
+        $name = '';
+        $errors = array();
+        if ( isset($_POST['form-submitted']) ) {
+            $ten       = isset($_POST['tenmon']) ?   $_POST['tenmon']  :NULL;
+            $khoaId       = isset($_POST['khoa']) ?   $_POST['khoa']  :NULL;
+            $note       = isset($_POST['mota']) ?   $_POST['mota']  :NULL;
+            try {
+                $this->boMonService->create( $ten, $khoaId, $note );
+                $this->redirect('index.php?op=bomon_list');
+                return;
+            } catch (ValidationException $e) {
+                $errors = $e->getErrors();
+            }
+        }
+        $khoaList = $this->khoaService->getAll('id',0,300);
+        include 'view/bomon/form.php';
+    }
+
+    public function deleteBoMon() {
+        $id = isset($_GET['id'])?$_GET['id']:NULL;
+        if ( !$id ) {
+            throw new Exception('Internal error.');
+        }
+        $this->boMonService->delete($id);
+
+        $this->redirect('index.php?op=bomon_list');
+    }
+
+    public function showBoMon() {
+        $id = isset($_GET['id'])?$_GET['id']:NULL;
+        if ( !$id ) {
+            throw new Exception('Internal error.');
+        }
+        $data = $this->boMonService->getId($id);
+        include 'view/bomon/detail.php';
+    }
+
+    public function editBoMon() {
+        $title = 'Edit';
+        $errors = array();
+        $id = isset($_GET['id'])?$_GET['id']:NULL;
+        if ( !$id ) {
+            throw new Exception('Internal error.');
+        }
+        $data = $this->boMonService->getId($id);
+        $khoaList = $this->khoaService->getAll('id',0,300);
+        if ( isset($_POST['form-submitted']) ) {
+            $ten       = isset($_POST['tenmon']) ?   $_POST['tenmon']  :NULL;
+            $khoaId       = isset($_POST['khoa']) ?   $_POST['khoa']  :NULL;
+            $note       = isset($_POST['mota']) ?   $_POST['mota']  :NULL;
+            try {
+                $this->boMonService->update($id, $ten, $khoaId, $note);
+                $this->redirect('index.php?op=bomon_list');
+                return;
+            } catch (ValidationException $e) {
+                $errors = $e->getErrors();
+            }
+        }
+
+        include 'view/bomon/form.php';
+    }
+
+    /*END BO MON ACTION ROUTER*/
+
+    /*CHUONG TRINH ACTION ROUTER*/
+    public function listChuongTrinh() {
+        $orderby = isset($_GET['orderby'])?$_GET['orderby']:NULL;
+        $totalRecord = $this->chuongtrinhService->totalRecord();
+        $Pagination = new Pagination();
+        $limit = $Pagination->limit;
+        $start = $Pagination->start();
+        $totalPages = $Pagination->totalPages($totalRecord);
+        $data = $this->chuongtrinhService->getAll($orderby, $start, $limit);
+        $khoaHocList = $this->khoahocService->getAll('id',0,300);
+        include 'view/chuongtrinh/list.php';
+    }
+
+    public function saveChuongTrinh() {
+        $title = 'Add new';
+        $name = '';
+        $errors = array();
+        if ( isset($_POST['form-submitted']) ) {
+            $ten       = isset($_POST['name']) ?   $_POST['name']  :NULL;
+            $khoaHocId       = isset($_POST['khoa']) ?   $_POST['khoa']  :NULL;
+            $note       = isset($_POST['note']) ?   $_POST['note']  :NULL;
+            $time       = isset($_POST['timetotal']) ?   $_POST['timetotal']  :NULL;
+            try {
+                $this->chuongtrinhService->create( $ten, $khoaHocId, $note, $time );
+                $this->redirect('index.php?op=chuongtrinh_list');
+                return;
+            } catch (ValidationException $e) {
+                $errors = $e->getErrors();
+            }
+        }
+        $khoaHocList = $this->khoahocService->getAll('id',0,300);
+        include 'view/chuongtrinh/form.php';
+    }
+
+    public function deleteChuongTrinh() {
+        $id = isset($_GET['id'])?$_GET['id']:NULL;
+        if ( !$id ) {
+            throw new Exception('Internal error.');
+        }
+        $this->chuongtrinhService->delete($id);
+
+        $this->redirect('index.php?op=chuongtrinh_list');
+    }
+
+    public function showChuongTrinh() {
+        $id = isset($_GET['id'])?$_GET['id']:NULL;
+        if ( !$id ) {
+            throw new Exception('Internal error.');
+        }
+        $data = $this->chuongtrinhService->getId($id);
+        include 'view/chuongtrinh/detail.php';
+    }
+
+    public function editChuongTrinh() {
+        $title = 'Edit';
+        $errors = array();
+        $id = isset($_GET['id'])?$_GET['id']:NULL;
+        if ( !$id ) {
+            throw new Exception('Internal error.');
+        }
+        $data = $this->chuongtrinhService->getId($id);
+        $khoaHocList = $this->khoahocService->getAll('id',0,300);
+        if ( isset($_POST['form-submitted']) ) {
+            $ten       = isset($_POST['name']) ?   $_POST['name']  :NULL;
+            $khoaHocId       = isset($_POST['khoa']) ?   $_POST['khoa']  :NULL;
+            $note       = isset($_POST['note']) ?   $_POST['note']  :NULL;
+            $time       = isset($_POST['timetotal']) ?   $_POST['timetotal']  :NULL;
+            try {
+                $this->chuongtrinhService->update($id, $ten, $khoaHocId, $note, $time );
+                $this->redirect('index.php?op=chuongtrinh_list');
+                return;
+            } catch (ValidationException $e) {
+                $errors = $e->getErrors();
+            }
+        }
+
+        include 'view/chuongtrinh/form.php';
+    }
+
+    /*END CHUONG TRINH ACTION ROUTER*/
+
+    /*GIAO VIEN ACTION ROUTER*/
+    public function listGV() {
+        $orderby = isset($_GET['orderby'])?$_GET['orderby']:NULL;
+        $totalRecord = $this->GVService->totalRecord();
+        $Pagination = new Pagination();
+        $limit = $Pagination->limit;
+        $start = $Pagination->start();
+        $totalPages = $Pagination->totalPages($totalRecord);
+        $data = $this->GVService->getAll($orderby, $start, $limit);
+        $khoaList = $this->khoaService->getAll('id',0,300);
+        $BMList = $this->boMonService->getAll('id',0,300);
+        include 'view/giangvien/list.php';
+    }
+
+    public function saveGV() {
+        $title = 'Add new';
+        $name = '';
+        $errors = array();
+        if ( isset($_POST['form-submitted']) ) {
+            $ten       = isset($_POST['tengv']) ?   $_POST['tengv']  :NULL;
+            $khoaId       = isset($_POST['khoa']) ?   $_POST['khoa']  :NULL;
+            $ma       = isset($_POST['magv']) ?   $_POST['magv']  :NULL;
+            $bomon       = isset($_POST['bomon']) ?   $_POST['bomon']  :NULL;
+            $email       = isset($_POST['email']) ?   $_POST['email']  :NULL;
+            try {
+                $this->GVService->create( $ma, $ten, $khoaId, $bomon , $email);
+                $this->redirect('index.php?op=gv_list');
+                return;
+            } catch (ValidationException $e) {
+                $errors = $e->getErrors();
+            }
+        }
+        $khoaList = $this->khoaService->getAll('id',0,300);
+        $BMList = $this->boMonService->getAll('id',0,300);
+        include 'view/giangvien/form.php';
+    }
+
+    public function deleteGV() {
+        $id = isset($_GET['id'])?$_GET['id']:NULL;
+        if ( !$id ) {
+            throw new Exception('Internal error.');
+        }
+        $this->GVService->delete($id);
+
+        $this->redirect('index.php?op=gv_list');
+    }
+
+    public function showGV() {
+        $id = isset($_GET['id'])?$_GET['id']:NULL;
+        if ( !$id ) {
+            throw new Exception('Internal error.');
+        }
+        $data = $this->GVService->getId($id);
+        include 'view/giangvien/detail.php';
+    }
+
+    public function editGV() {
+        $title = 'Edit';
+        $errors = array();
+        $id = isset($_GET['id'])?$_GET['id']:NULL;
+        if ( !$id ) {
+            throw new Exception('Internal error.');
+        }
+        $data = $this->GVService->getId($id);
+        $khoaList = $this->khoaService->getAll('id',0,300);
+        $BMList = $this->boMonService->getAll('id',0,300);
+        if ( isset($_POST['form-submitted']) ) {
+            $ten       = isset($_POST['tengv']) ?   $_POST['tengv']  :NULL;
+            $khoaId       = isset($_POST['khoa']) ?   $_POST['khoa']  :NULL;
+            $ma       = isset($_POST['magv']) ?   $_POST['magv']  :NULL;
+            $bomon       = isset($_POST['bomon']) ?   $_POST['bomon']  :NULL;
+            $email       = isset($_POST['email']) ?   $_POST['email']  :NULL;
+            try {
+                $this->GVService->update($id, $ma, $ten, $khoaId, $bomon , $email);
+                $this->redirect('index.php?op=gv_list');
+                return;
+            } catch (ValidationException $e) {
+                $errors = $e->getErrors();
+            }
+        }
+
+        include 'view/giangvien/form.php';
+    }
+
+    /*END GIAO VIEN ACTION ROUTER*/
+
+    /*SINH VIEN ACTION ROUTER*/
+    public function listSV() {
+        $orderby = isset($_GET['orderby'])?$_GET['orderby']:NULL;
+        $totalRecord = $this->SVService->totalRecord();
+        $Pagination = new Pagination();
+        $limit = $Pagination->limit;
+        $start = $Pagination->start();
+        $totalPages = $Pagination->totalPages($totalRecord);
+        $data = $this->SVService->getAll($orderby, $start, $limit);
+        $KHList = $this->khoahocService->getAll('id',0,300);
+        $CTList = $this->chuongtrinhService->getAll('id',0,300);
+        include 'view/sinhvien/list.php';
+    }
+
+    public function saveSV() {
+        $title = 'Add new';
+        $name = '';
+        $errors = array();
+        if ( isset($_POST['form-submitted']) ) {
+            $ma = isset($_POST['masv']) ?   $_POST['masv']  :NULL;
+            $ten       = isset($_POST['tensv']) ?   $_POST['tensv']  :NULL;
+            $email       = isset($_POST['email']) ?   $_POST['email']  :NULL;
+            $khoahoc      = isset($_POST['khoahoc']) ?   $_POST['khoahoc']  :NULL;
+            $chuongtrinhhoc      = isset($_POST['chuongtrinhhoc']) ?   $_POST['chuongtrinhhoc']  :NULL;
+            try {
+                $this->SVService->create( $ma, $ten, $email, $khoahoc, $chuongtrinhhoc );
+                $this->redirect('index.php?op=sv_list');
+                return;
+            } catch (ValidationException $e) {
+                $errors = $e->getErrors();
+            }
+        }
+        $KHList = $this->khoahocService->getAll('id',0,300);
+        $CTList = $this->chuongtrinhService->getAll('id',0,300);
+        include 'view/sinhvien/form.php';
+    }
+
+    public function deleteSV() {
+        $id = isset($_GET['id'])?$_GET['id']:NULL;
+        if ( !$id ) {
+            throw new Exception('Internal error.');
+        }
+        $this->SVService->delete($id);
+
+        $this->redirect('index.php?op=sv_list');
+    }
+
+    public function showSV() {
+        $id = isset($_GET['id'])?$_GET['id']:NULL;
+        if ( !$id ) {
+            throw new Exception('Internal error.');
+        }
+        $data = $this->SVService->getId($id);
+        include 'view/sinhvien/detail.php';
+    }
+
+    public function editSV() {
+        $title = 'Edit';
+        $errors = array();
+        $id = isset($_GET['id'])?$_GET['id']:NULL;
+        if ( !$id ) {
+            throw new Exception('Internal error.');
+        }
+        $data = $this->SVService->getId($id);
+        $KHList = $this->khoahocService->getAll('id',0,300);
+        $CTList = $this->chuongtrinhService->getAll('id',0,300);
+        if ( isset($_POST['form-submitted']) ) {
+            $ma = isset($_POST['masv']) ?   $_POST['masv']  :NULL;
+            $ten       = isset($_POST['tensv']) ?   $_POST['tensv']  :NULL;
+            $email       = isset($_POST['email']) ?   $_POST['email']  :NULL;
+            $khoahoc      = isset($_POST['khoahoc']) ?   $_POST['khoahoc']  :NULL;
+            $chuongtrinhhoc      = isset($_POST['chuongtrinhhoc']) ?   $_POST['chuongtrinhhoc']  :NULL;
+            try {
+                $this->SVService->update($id, $ma, $ten, $email, $khoahoc, $chuongtrinhhoc );
+                $this->redirect('index.php?op=sv_list');
+                return;
+            } catch (ValidationException $e) {
+                $errors = $e->getErrors();
+            }
+        }
+
+        include 'view/sinhvien/form.php';
+    }
+
+    /*END SINH VIEN ACTION ROUTER*/
 }
 ?>

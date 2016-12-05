@@ -2,31 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a2b6957-31c9-411c-a5b9-5f6fd1c45258" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/js/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/KhoaHocGateway.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/KhoaHocService.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/khoahoc/detail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/khoahoc/form.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/khoahoc/khoa-form.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/khoahoc/khoa.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/khoahoc/list.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/user/changepass.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/khoa/listkhoa.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/ContactsController.php" afterPath="$PROJECT_DIR$/controller/__ContactsController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/KhoaController.php" afterPath="$PROJECT_DIR$/controller/__KhoaController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/model/ContactsGateway.php" afterPath="$PROJECT_DIR$/model/__ContactsGateway.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/model/ContactsService.php" afterPath="$PROJECT_DIR$/model/__ContactsService.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/view/contact-form.php" afterPath="$PROJECT_DIR$/view/__contact-form.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/view/contact.php" afterPath="$PROJECT_DIR$/view/__contact.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/view/contacts.php" afterPath="$PROJECT_DIR$/view/__contacts.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/BoMonGateway.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/BoMonService.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/ChuongTrinhGateway.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/ChuongTrinhService.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/GVGateway.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/GVService.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/SVGateway.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/SVService.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/bomon/detail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/bomon/form.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/bomon/list.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/chuongtrinh/detail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/chuongtrinh/form.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/chuongtrinh/list.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/giangvien/detail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/giangvien/form.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/giangvien/list.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/sinhvien/detail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/sinhvien/form.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/sinhvien/list.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/khoa/KhoaGateway.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/khoa/KhoaService.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/khoa/ValidationException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/khoa/khoa-form.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/khoa/khoa.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/khoahoc/khoa-form.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/khoahoc/khoa.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/magicento.xml" afterPath="$PROJECT_DIR$/.idea/magicento.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/IndexController.php" afterPath="$PROJECT_DIR$/controller/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/UserGateway.php" afterPath="$PROJECT_DIR$/model/UserGateway.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/UserService.php" afterPath="$PROJECT_DIR$/model/UserService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/script.txt" afterPath="$PROJECT_DIR$/sql/script.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/KhoaService.php" afterPath="$PROJECT_DIR$/model/KhoaService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/include/header.php" afterPath="$PROJECT_DIR$/view/include/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/user/detail.php" afterPath="$PROJECT_DIR$/view/user/detail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/khoahoc/detail.php" afterPath="$PROJECT_DIR$/view/khoahoc/detail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/khoahoc/list.php" afterPath="$PROJECT_DIR$/view/khoahoc/list.php" />
     </list>
     <ignored path="school.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,98 +56,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="form.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/khoahoc/form.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="36" column="127" selection-start-line="36" selection-start-column="127" selection-end-line="36" selection-end-column="127" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/user/form.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="30" column="58" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="396" column="43" selection-start-line="396" selection-start-column="43" selection-end-line="396" selection-end-column="43" />
+            <state relative-caret-position="253">
+              <caret line="791" column="23" selection-start-line="791" selection-start-column="23" selection-end-line="791" selection-end-column="23" />
               <folding>
                 <element signature="n#editKhoa#0;n#IndexController#0;n#!!top" expanded="false" />
                 <element signature="n#saveUser#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#loginUser#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#importUser#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#changePassUser#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#importSV#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#listKhoaHoc#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#saveKhoaHoc#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#deleteKhoaHoc#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#showKhoaHoc#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#editKhoaHoc#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#listBoMon#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#saveBoMon#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#deleteBoMon#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#showBoMon#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#editBoMon#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#listChuongTrinh#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#saveChuongTrinh#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#deleteChuongTrinh#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#showChuongTrinh#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#editChuongTrinh#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#listGV#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#saveGV#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#deleteGV#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#showGV#0;n#IndexController#0;n#!!top" expanded="false" />
+                <element signature="n#editGV#0;n#IndexController#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KhoaHocService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/KhoaHocService.php">
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/include/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="80" column="44" selection-start-line="80" selection-start-column="44" selection-end-line="80" selection-end-column="44" />
+            <state relative-caret-position="153">
+              <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KhoaHocGateway.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/KhoaHocGateway.php">
+      <file leaf-file-name="import.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/user/import.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="45" column="50" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
-              <folding>
-                <marker date="1480522803329" expanded="true" signature="95:117" ph="SELECT * FRO... khoa_hoc" />
-                <marker date="1480522803329" expanded="true" signature="384:444" ph="SELECT * FRO... khoa_hoc" />
-                <marker date="1480522803329" expanded="true" signature="740:772" ph="SELECT * FRO... khoa_hoc" />
-                <marker date="1480522803329" expanded="true" signature="1353:1492" ph="INSERT INTO khoa_hoc... " />
-                <marker date="1480522803329" expanded="true" signature="2058:2209" ph="UPDATE khoa_... " />
-                <marker date="1480522803329" expanded="true" signature="2342:2372" ph="DELETE FROM " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/view/khoahoc/detail.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+            <state relative-caret-position="-123">
+              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/khoahoc/list.php">
+      <file leaf-file-name="form.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/sinhvien/form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="17" column="70" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
+            <state relative-caret-position="184">
+              <caret line="26" column="43" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KhoaService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/KhoaService.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IndexService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/IndexService.php">
+      <file leaf-file-name="detail.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/sinhvien/detail.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -147,11 +133,62 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/js/script.js">
+      <file leaf-file-name="list.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/sinhvien/list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+            <state relative-caret-position="391">
+              <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
+              <folding>
+                <element signature="e#763#769#1#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SVGateway.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/SVGateway.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1012">
+              <caret line="44" column="151" selection-start-line="44" selection-start-column="151" selection-end-line="44" selection-end-column="151" />
+              <folding>
+                <marker date="1480953300357" expanded="true" signature="90:104" ph="SELECT * FRO... khoa_hoc" />
+                <marker date="1480953300357" expanded="true" signature="90:113" ph="SELECT * FRO... sinh_vien" />
+                <marker date="1480953300357" expanded="true" signature="381:442" ph="SELECT * FRO... sinh_vien" />
+                <marker date="1480953300357" expanded="true" signature="738:771" ph="SELECT * FRO... sinh_vien" />
+                <marker date="1480953300357" expanded="true" signature="1339:1476" ph="INSERT INTO sinh_vien... " />
+                <marker date="1480953300357" expanded="true" signature="2029:2175" ph="UPDATE sinh_... " />
+                <marker date="1480953300357" expanded="true" signature="2308:2339" ph="DELETE FROM " />
+                <marker date="1480953300357" expanded="true" signature="2329:2339" ph="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GVService.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/GVService.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="65" column="48" selection-start-line="65" selection-start-column="48" selection-end-line="65" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/bomon/form.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SVService.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/SVService.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1886">
+              <caret line="82" column="24" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -170,14 +207,34 @@
         <option value="$PROJECT_DIR$/model/UserService.php" />
         <option value="$PROJECT_DIR$/model/UserGateway.php" />
         <option value="$PROJECT_DIR$/sql/script.txt" />
-        <option value="$PROJECT_DIR$/view/include/header.php" />
-        <option value="$PROJECT_DIR$/view/khoahoc/list.php" />
         <option value="$PROJECT_DIR$/libs/js/script.js" />
-        <option value="$PROJECT_DIR$/controller/IndexController.php" />
         <option value="$PROJECT_DIR$/view/khoahoc/form.php" />
         <option value="$PROJECT_DIR$/model/KhoaHocService.php" />
         <option value="$PROJECT_DIR$/model/KhoaHocGateway.php" />
+        <option value="$PROJECT_DIR$/model/ChuongTrinhService.php" />
+        <option value="$PROJECT_DIR$/view/chuongtrinh/form.php" />
+        <option value="$PROJECT_DIR$/model/ChuongTrinhGateway.php" />
+        <option value="$PROJECT_DIR$/view/chuongtrinh/list.php" />
+        <option value="$PROJECT_DIR$/view/khoahoc/list.php" />
         <option value="$PROJECT_DIR$/view/khoahoc/detail.php" />
+        <option value="$PROJECT_DIR$/view/chuongtrinh/detail.php" />
+        <option value="$PROJECT_DIR$/view/giangvien/detail.php" />
+        <option value="$PROJECT_DIR$/model/GVGateway.php" />
+        <option value="$PROJECT_DIR$/model/KhoaService.php" />
+        <option value="$PROJECT_DIR$/view/bomon/list.php" />
+        <option value="$PROJECT_DIR$/view/bomon/detail.php" />
+        <option value="$PROJECT_DIR$/model/BoMonGateway.php" />
+        <option value="$PROJECT_DIR$/model/BoMonService.php" />
+        <option value="$PROJECT_DIR$/view/bomon/form.php" />
+        <option value="$PROJECT_DIR$/view/giangvien/list.php" />
+        <option value="$PROJECT_DIR$/view/giangvien/form.php" />
+        <option value="$PROJECT_DIR$/model/GVService.php" />
+        <option value="$PROJECT_DIR$/view/sinhvien/form.php" />
+        <option value="$PROJECT_DIR$/view/sinhvien/list.php" />
+        <option value="$PROJECT_DIR$/model/SVGateway.php" />
+        <option value="$PROJECT_DIR$/model/SVService.php" />
+        <option value="$PROJECT_DIR$/controller/IndexController.php" />
+        <option value="$PROJECT_DIR$/view/include/header.php" />
       </list>
     </option>
   </component>
@@ -193,9 +250,9 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="55" />
-    <option name="y" value="24" />
+    <option name="y" value="-4" />
     <option name="width" value="1311" />
-    <option name="height" value="744" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -287,7 +344,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="khoahoc" />
+              <option name="myItemId" value="include" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -305,21 +362,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="include" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="school" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="school" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sql" />
+              <option name="myItemId" value="bomon" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -334,24 +377,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="school" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="school" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -391,11 +416,13 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.notifications" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/model" />
       <recent name="$PROJECT_DIR$/view" />
+      <recent name="$PROJECT_DIR$/model" />
       <recent name="$PROJECT_DIR$/view/khoa" />
     </key>
   </component>
@@ -462,21 +489,23 @@
       <updated>1480386245212</updated>
       <workItem from="1480386251761" duration="6951000" />
       <workItem from="1480516823645" duration="6058000" />
+      <workItem from="1480816971318" duration="3458000" />
+      <workItem from="1480843257210" duration="2491000" />
+      <workItem from="1480949768234" duration="4112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13009000" />
+    <option name="totallyTimeSpent" value="23070000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="24" width="1311" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="55" y="-4" width="1311" height="772" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23951182" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22501907" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="MagicentoScripts" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -488,6 +517,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -504,115 +534,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/model/UserGateway.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1480392611573" expanded="true" signature="279:310" ph="SELECT * FRO... nguoi_dung" />
-            <marker date="1480392611573" expanded="true" signature="948:1081" ph="INSERT INTO nguoi_dung... " />
-            <marker date="1480392611573" expanded="true" signature="1270:1321" ph="UPDATE khoa " />
-            <marker date="1480392611573" expanded="true" signature="1454:1480" ph="DELETE FROM " />
-            <marker date="1480392611573" expanded="true" signature="1786:1874" ph="SELECT * FRO... nguoi_dung" />
-            <marker date="1480392611573" expanded="true" signature="2408:2521" ph="INSERT INTO user_verified... " />
-            <marker date="1480392611573" expanded="true" signature="2643:2690" ph="SELECT * FRO... giang_vien" />
-            <marker date="1480392611573" expanded="true" signature="3403:3533" ph="INSERT INTO giang_vien... " />
-            <marker date="1480392611573" expanded="true" signature="3746:3812" ph="UPDATE khoa " />
-            <marker date="1480392611573" expanded="true" signature="3923:3968" ph="SELECT * FRO... sinh_vien" />
-            <marker date="1480392611573" expanded="true" signature="4704:4848" ph="INSERT INTO giang_vien... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/user/detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/user/form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/user/list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="55" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5566">
-          <caret line="292" column="66" selection-start-line="292" selection-start-column="66" selection-end-line="292" selection-end-column="66" />
-          <folding>
-            <element signature="n#editKhoa#0;n#IndexController#0;n#!!top" expanded="false" />
-            <element signature="n#saveUser#0;n#IndexController#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/user/changepass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/IndexService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/script.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="989">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="51" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/include/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
-          <caret line="44" column="47" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/UserService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3657">
-          <caret line="159" column="48" selection-start-line="159" selection-start-column="48" selection-end-line="159" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <marker date="1480210955652" expanded="true" signature="161:249" ph="SELECT entit... temp_customers" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/user/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -624,7 +551,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -632,7 +558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="20" column="55" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -644,31 +569,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/UserService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3657">
-          <caret line="159" column="48" selection-start-line="159" selection-start-column="48" selection-end-line="159" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/UserGateway.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="539">
           <caret line="95" column="20" selection-start-line="95" selection-start-column="20" selection-end-line="95" selection-end-column="20" />
-          <folding>
-            <marker date="1480392611573" expanded="true" signature="279:310" ph="SELECT * FRO... nguoi_dung" />
-            <marker date="1480392611573" expanded="true" signature="948:1081" ph="INSERT INTO nguoi_dung... " />
-            <marker date="1480392611573" expanded="true" signature="1270:1321" ph="UPDATE khoa " />
-            <marker date="1480392611573" expanded="true" signature="1454:1480" ph="DELETE FROM " />
-            <marker date="1480392611573" expanded="true" signature="1786:1874" ph="SELECT * FRO... nguoi_dung" />
-            <marker date="1480392611573" expanded="true" signature="2408:2521" ph="INSERT INTO user_verified... " />
-            <marker date="1480392611573" expanded="true" signature="2643:2690" ph="SELECT * FRO... giang_vien" />
-            <marker date="1480392611573" expanded="true" signature="3403:3533" ph="INSERT INTO giang_vien... " />
-            <marker date="1480392611573" expanded="true" signature="3746:3812" ph="UPDATE khoa " />
-            <marker date="1480392611573" expanded="true" signature="3923:3968" ph="SELECT * FRO... sinh_vien" />
-            <marker date="1480392611573" expanded="true" signature="4704:4848" ph="INSERT INTO giang_vien... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -676,7 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
           <caret line="61" column="13" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -684,23 +587,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="44" column="22" selection-start-line="41" selection-start-column="16" selection-end-line="44" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/khoahoc/listkhoa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-468">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/view/khoahoc/listkhoa.php" />
     <entry file="file://$PROJECT_DIR$/controller/__KhoaController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -708,31 +602,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/include/header.php">
+    <entry file="file://$PROJECT_DIR$/view/user/form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-207">
-          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/khoahoc/khoa-form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-345">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/khoa/form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="690">
+          <caret line="30" column="58" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -744,68 +620,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/KhoaService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/user/form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="30" column="58" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/khoahoc/list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="17" column="70" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/chuongtrinh/khoa.php" />
+    <entry file="file://$PROJECT_DIR$/view/chuongtrinh/khoa-form.php" />
+    <entry file="file://$PROJECT_DIR$/view/khoahoc/khoa-form.php" />
+    <entry file="file://$PROJECT_DIR$/view/khoa/form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/khoa/khoa.php" />
+    <entry file="file://$PROJECT_DIR$/view/khoa/khoa-form.php" />
+    <entry file="file://$PROJECT_DIR$/view/chuongtrinh/form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" column="178" selection-start-line="25" selection-start-column="178" selection-end-line="25" selection-end-column="178" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/ChuongTrinhService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/khoahoc/form.php">
+    <entry file="file://$PROJECT_DIR$/model/ChuongTrinhGateway.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="36" column="127" selection-start-line="36" selection-start-column="127" selection-end-line="36" selection-end-column="127" />
+        <state relative-caret-position="966">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/chuongtrinh/list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="30" column="29" selection-start-line="26" selection-start-column="24" selection-end-line="30" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/khoahoc/detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/IndexController.php">
+    <entry file="file://$PROJECT_DIR$/view/giangvien/khoa.php" />
+    <entry file="file://$PROJECT_DIR$/view/chuongtrinh/detail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="396" column="43" selection-start-line="396" selection-start-column="43" selection-end-line="396" selection-end-column="43" />
-          <folding>
-            <element signature="n#editKhoa#0;n#IndexController#0;n#!!top" expanded="false" />
-            <element signature="n#saveUser#0;n#IndexController#0;n#!!top" expanded="false" />
-          </folding>
+        <state relative-caret-position="46">
+          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/UserService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/KhoaService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/KhoaHocService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="80" column="44" selection-start-line="80" selection-start-column="44" selection-end-line="80" selection-end-column="44" />
+        <state relative-caret-position="213">
+          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/KhoaHocGateway.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
+        <state relative-caret-position="593">
           <caret line="45" column="50" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
           <folding>
             <marker date="1480522803329" expanded="true" signature="95:117" ph="SELECT * FRO... khoa_hoc" />
@@ -818,10 +723,236 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/khoahoc/detail.php">
+    <entry file="file://$PROJECT_DIR$/model/KhoaGateway.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1480136119203" expanded="true" signature="92:110" ph="SELECT * FRO... khoa" />
+            <marker date="1480136119203" expanded="true" signature="374:430" ph="SELECT * FRO... khoa" />
+            <marker date="1480136119203" expanded="true" signature="726:754" ph="SELECT * FRO... khoa" />
+            <marker date="1480136119203" expanded="true" signature="957:1001" ph="INSERT INTO khoa... " />
+            <marker date="1480136119203" expanded="true" signature="1190:1241" ph="UPDATE khoa " />
+            <marker date="1480136119203" expanded="true" signature="1374:1400" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/bomon/detail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/BoMonGateway.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="36" column="52" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="52" />
+          <folding>
+            <marker date="1480950252757" expanded="true" signature="93:107" ph="SELECT * FRO... khoa_hoc" />
+            <marker date="1480950252757" expanded="true" signature="93:113" ph="SELECT * FRO... bo_mon" />
+            <marker date="1480950252757" expanded="true" signature="376:434" ph="SELECT * FRO... bo_mon" />
+            <marker date="1480950252757" expanded="true" signature="730:760" ph="SELECT * FRO... bo_mon" />
+            <marker date="1480950252757" expanded="true" signature="1140:1217" ph="INSERT INTO bo_mon... " />
+            <marker date="1480950252757" expanded="true" signature="1582:1664" ph="UPDATE bo_mo... " />
+            <marker date="1480950252757" expanded="true" signature="1797:1825" ph="DELETE FROM " />
+            <marker date="1480950252757" expanded="true" signature="1815:1825" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/BoMonService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="943">
+          <caret line="80" column="72" selection-start-line="80" selection-start-column="72" selection-end-line="80" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/bomon/list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+          <folding>
+            <element signature="e#609#615#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/khoahoc/form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="38" column="45" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/khoahoc/list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="34" column="29" selection-start-line="27" selection-start-column="16" selection-end-line="34" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/giangvien/list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/giangvien/detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/GVGateway.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="38" column="26" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="26" />
+          <folding>
+            <marker date="1480844880538" expanded="true" signature="90:104" ph="SELECT * FRO... khoa_hoc" />
+            <marker date="1480844880538" expanded="true" signature="90:114" ph="SELECT * FRO... giang_vien" />
+            <marker date="1480844880538" expanded="true" signature="383:445" ph="SELECT * FRO... giang_vien" />
+            <marker date="1480844880538" expanded="true" signature="741:775" ph="SELECT * FRO... giang_vien" />
+            <marker date="1480844880538" expanded="true" signature="1407:1545" ph="INSERT INTO giang_vien... " />
+            <marker date="1480844880538" expanded="true" signature="2162:2276" ph="UPDATE giang... " />
+            <marker date="1480844880538" expanded="true" signature="2162:2310" ph="UPDATE giang... " />
+            <marker date="1480844880538" expanded="true" signature="2443:2475" ph="DELETE FROM " />
+            <marker date="1480844880538" expanded="true" signature="2465:2475" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/giangvien/form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="26" column="114" selection-start-line="26" selection-start-column="114" selection-end-line="26" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/bomon/form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/sinhvien/detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/sinhvien/list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
+          <folding>
+            <element signature="e#763#769#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/SVGateway.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1012">
+          <caret line="44" column="151" selection-start-line="44" selection-start-column="151" selection-end-line="44" selection-end-column="151" />
+          <folding>
+            <marker date="1480953300357" expanded="true" signature="90:104" ph="SELECT * FRO... khoa_hoc" />
+            <marker date="1480953300357" expanded="true" signature="90:113" ph="SELECT * FRO... sinh_vien" />
+            <marker date="1480953300357" expanded="true" signature="381:442" ph="SELECT * FRO... sinh_vien" />
+            <marker date="1480953300357" expanded="true" signature="738:771" ph="SELECT * FRO... sinh_vien" />
+            <marker date="1480953300357" expanded="true" signature="1339:1476" ph="INSERT INTO sinh_vien... " />
+            <marker date="1480953300357" expanded="true" signature="2029:2175" ph="UPDATE sinh_... " />
+            <marker date="1480953300357" expanded="true" signature="2308:2339" ph="DELETE FROM " />
+            <marker date="1480953300357" expanded="true" signature="2329:2339" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/GVService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="65" column="48" selection-start-line="65" selection-start-column="48" selection-end-line="65" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/SVService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1886">
+          <caret line="82" column="24" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/sinhvien/form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="26" column="43" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="791" column="23" selection-start-line="791" selection-start-column="23" selection-end-line="791" selection-end-column="23" />
+          <folding>
+            <element signature="n#editKhoa#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#saveUser#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#loginUser#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#importUser#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#changePassUser#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#importSV#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#listKhoaHoc#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#saveKhoaHoc#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#deleteKhoaHoc#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#showKhoaHoc#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#editKhoaHoc#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#listBoMon#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#saveBoMon#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#deleteBoMon#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#showBoMon#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#editBoMon#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#listChuongTrinh#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#saveChuongTrinh#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#deleteChuongTrinh#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#showChuongTrinh#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#editChuongTrinh#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#listGV#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#saveGV#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#deleteGV#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#showGV#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#editGV#0;n#IndexController#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/include/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/user/import.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-123">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
           <folding />
         </state>
       </provider>

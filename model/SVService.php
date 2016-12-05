@@ -1,22 +1,22 @@
 <?php
 require_once 'model/IndexService.php';
-require_once 'model/KhoaGateway.php';
+require_once 'model/SVGateway.php';
 require_once 'model/ValidationException.php';
 
 
-class KhoaService {
+class SVService {
     private $index = NULL;
-    private $khoaGateway    = NULL;
+    private $SVGateway    = NULL;
 
     public function __construct() {
         $this->index = new IndexService();
-        $this->khoaGateway = new KhoaGateway();
+        $this->SVGateway = new SVGateway();
     }
     public function totalRecord()
     {
         try {
             $this->index->openDb();
-            $res = $this->khoaGateway->allRecord();
+            $res = $this->SVGateway->allRecord();
             $this->index->closeDb();
             return $res;
         } catch (Exception $e) {
@@ -28,7 +28,7 @@ class KhoaService {
     public function getAll($order, $start, $limit) {
         try {
             $this->index->openDb();
-            $res = $this->khoaGateway->selectAll($order, $start, $limit);
+            $res = $this->SVGateway->selectAll($order, $start, $limit);
             $this->index->closeDb();
             return $res;
         } catch (Exception $e) {
@@ -40,13 +40,14 @@ class KhoaService {
     public function getId($id) {
         try {
             $this->index->openDb();
-            $res = $this->khoaGateway->selectById($id);
+            $res = $this->SVGateway->selectById($id);
             $this->index->closeDb();
             return $res;
         } catch (Exception $e) {
             $this->index->closeDb();
             throw $e;
         }
+        return $this->contactsGateway->find($id);
     }
     
     private function validateParams( $name) {
@@ -60,11 +61,11 @@ class KhoaService {
         throw new ValidationException($errors);
     }
     
-    public function create( $name ) {
+    public function create( $ma, $ten, $email, $khoahoc, $chuongtrinhhoc ) {
         try {
             $this->index->openDb();
-            $this->validateParams($name);
-            $res = $this->khoaGateway->insert($name);
+            $this->validateParams($ma);
+            $res = $this->SVGateway->insert( $ma, $ten, $email, $khoahoc, $chuongtrinhhoc );
             $this->index->closeDb();
             return $res;
         } catch (Exception $e) {
@@ -73,11 +74,11 @@ class KhoaService {
         }
     }
 
-    public function update($id, $name) {
+    public function update($id, $ma, $ten, $email, $khoahoc, $chuongtrinhhoc) {
         try {
             $this->index->openDb();
-            $this->validateParams($name);
-            $res = $this->khoaGateway->update($id, $name);
+            $this->validateParams($ma);
+            $res = $this->SVGateway->update($id, $ma, $ten, $email, $khoahoc, $chuongtrinhhoc);
             $this->index->closeDb();
             return $res;
         } catch (Exception $e) {
@@ -89,7 +90,7 @@ class KhoaService {
     public function delete( $id ) {
         try {
             $this->index->openDb();
-            $res = $this->khoaGateway->delete($id);
+            $res = $this->SVGateway->delete($id);
             $this->index->closeDb();
         } catch (Exception $e) {
             $this->index->closeDb();

@@ -14,21 +14,10 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.php">School Manager</a>
+            <a class="navbar-brand" href="index.php">Quan Ly Truong Hoc</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
-                    <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Page 1-1</a></li>
-                    <li><a href="#">Page 1-2</a></li>
-                    <li><a href="#">Page 1-3</a></li>
-                </ul>
-            </li>
-            <li  <?php if (strpos($_SERVER['REQUEST_URI'], "khoa_list") !== false) { echo "class = 'active'";}?>><a href="index.php?op=khoa_list">Quản Lý Khoa</a></li>
-            <li><a href="#">Page 3</a></li>
+            <li><a href="index.php">Trang chu </a></li>
             <li class="dropdown <?php if (strpos($_SERVER['REQUEST_URI'], "user_") !== false) { echo 'active';}?>">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">User
                     <span class="caret"></span></a>
@@ -43,9 +32,26 @@
                     <?php } ?>
                 </ul>
             </li>
-            <li><a href="index.php?op=import_gv">Import GV</a></li>
-            <li><a href="index.php?op=import_sv">Import SV</a></li>
-            <li><a href="index.php?op=khoahoc_list">Quản lý Khóa học</a></li>
+            <li>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Quản lý
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.php?op=khoahoc_list">Khóa học</a></li>
+                    <li  <?php if (strpos($_SERVER['REQUEST_URI'], "khoa_list") !== false) { echo "class = 'active'";}?>><a href="index.php?op=khoa_list">Quản Lý Khoa</a></li>
+                    <li><a href="index.php?op=chuongtrinh_list">Chương trình học</a></li>
+                    <li><a href="index.php?op=bomon_list">Bộ Môn</a></li>
+                    <li><a href="index.php?op=gv_list">Giáo Viên</a></li>
+                    <li><a href="index.php?op=sv_list">Sinh Viên</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Import/ Export
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.php?op=import_gv">Import GV</a></li>
+                    <li><a href="index.php?op=import_sv">Import SV</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
 </nav>
