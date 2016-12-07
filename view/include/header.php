@@ -49,8 +49,10 @@
                 <ul class="dropdown-menu">
                     <li><a href="index.php?op=import_gv">Import GV</a></li>
                     <li><a href="index.php?op=import_sv">Import SV</a></li>
+                    <li><a  href="index.php?op=export_dt">Export Đề tài</a></li>
                 </ul>
             </li>
+            <li><a href="index.php?op=detai_list">Đề tài</a></li>
         </ul>
     </div>
 </nav>

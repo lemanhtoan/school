@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 07, 2016 at 08:09 AM
+-- Generation Time: Dec 07, 2016 at 11:26 PM
 -- Server version: 5.6.33-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.20
 
@@ -90,6 +90,36 @@ INSERT INTO `contacts` (`id`, `name`, `phone`, `email`, `address`) VALUES
 (5, 'Toan', '0914390567', 'toanktv.it@gmail.com', 'abc ddddfdfdf'),
 (12, 'sang', '01674659025', 'sangtk4@gmail.com', 'ngox 122 yen hoa'),
 (13, 'nam', '01675689023', 'hi@gmail.com', 'ngo 122');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `de_tai`
+--
+
+CREATE TABLE IF NOT EXISTS `de_tai` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `ten_dt` varchar(255) NOT NULL,
+  `mota` text,
+  `khoahoc_id` int(6) DEFAULT NULL,
+  `khoa_id` int(6) DEFAULT NULL,
+  `sinhvien_id` int(6) DEFAULT NULL,
+  `giangvien_id` int(6) DEFAULT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  `status` int(2) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `de_tai`
+--
+
+INSERT INTO `de_tai` (`id`, `ten_dt`, `mota`, `khoahoc_id`, `khoa_id`, `sinhvien_id`, `giangvien_id`, `created_at`, `updated_at`, `status`) VALUES
+(1, 'Đề tài 1', 'mo tả đề tài 1 1', 6, 2, 5, 4, '2016-12-07', '2016-12-07', 1),
+(2, 'Đề tài 2', 'anc', 7, 3, 6, 6, '2016-12-07', '2016-12-07', 1),
+(3, 'Đề tài 3', 'nc', 8, 5, 5, 2, '2016-12-07', '2016-12-07', 1),
+(4, 'Đề tài 4', 'bc', 7, 3, 7, 2, '2016-12-07', '2016-12-07', 1);
 
 -- --------------------------------------------------------
 

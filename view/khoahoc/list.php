@@ -39,6 +39,7 @@
                 <td>
                     <a href="index.php?op=khoahoc_edit&id=<?php echo $item->id; ?>" class="btn btn-info">edit</a>
                     <a href="index.php?op=khoahoc_delete&id=<?php echo $item->id; ?>" class="btn btn-danger" onclick="return checkDel()">delete</a>
+                    <a href="index.php?op=khoahoc_detai&id=<?php echo $item->id; ?>" class="btn btn-info">Đề tài</a>
                 </td>
             </tr>
         <?php endforeach; ?>

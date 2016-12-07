@@ -1,0 +1,120 @@
+
+    <html>
+    <body>
+    <h1>Đề tài</h1>
+    <div class="container">
+                    <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Tên đề tài</th>
+                    <th>Tên sinh viên</th>
+                    <th>Tên giảng viên</th>
+                    <th>Khóa học</th>
+                    <th>Khoa</th>
+                    <th>Mô tả</th>
+                    <th>Ngày đăng ký</th>
+                    <th>Ngày cập nhật</th>
+                    <th>Trạng thái</th>
+                </tr>
+                </thead>
+                <tbody>
+                                    <tr>
+                        <td>1</td>
+                        <td>
+                            <b>Đề tài 1</b>
+                        </td>
+                        <td>
+                            <b>
+                                erer                            </b>
+                        </td>
+                        <td>
+                            <b>
+                                vuquang                            </b>
+                        </td>
+                        <td>
+                            Đạo tạo ngắn hạn kế toán                        </td>
+                        <td>
+                            Công nghệ Thông tin                        </td>
+                        <td>mo tả đề tài 1 1</td>
+                        <td>2016-12-07</td>
+                        <td>2016-12-07</td>
+                        <td>Đã đăng ký</td>
+
+                    </tr>
+                                    <tr>
+                        <td>2</td>
+                        <td>
+                            <b>Đề tài 2</b>
+                        </td>
+                        <td>
+                            <b>
+                                dd sdsdd sd                            </b>
+                        </td>
+                        <td>
+                            <b>
+                                le manh toan                            </b>
+                        </td>
+                        <td>
+                            kế toán                        </td>
+                        <td>
+                            Tin học                        </td>
+                        <td>anc</td>
+                        <td>2016-12-07</td>
+                        <td>2016-12-07</td>
+                        <td>Đã đăng ký</td>
+
+                    </tr>
+                                    <tr>
+                        <td>3</td>
+                        <td>
+                            <b>Đề tài 3</b>
+                        </td>
+                        <td>
+                            <b>
+                                erer                            </b>
+                        </td>
+                        <td>
+                            <b>
+                                huy                            </b>
+                        </td>
+                        <td>
+                            CNTT                        </td>
+                        <td>
+                            1212                        </td>
+                        <td>nc</td>
+                        <td>2016-12-07</td>
+                        <td>2016-12-07</td>
+                        <td>Đã đăng ký</td>
+
+                    </tr>
+                                    <tr>
+                        <td>4</td>
+                        <td>
+                            <b>Đề tài 4</b>
+                        </td>
+                        <td>
+                            <b>
+                                rererr                            </b>
+                        </td>
+                        <td>
+                            <b>
+                                huy                            </b>
+                        </td>
+                        <td>
+                            kế toán                        </td>
+                        <td>
+                            Tin học                        </td>
+                        <td>bc</td>
+                        <td>2016-12-07</td>
+                        <td>2016-12-07</td>
+                        <td>Đã đăng ký</td>
+
+                    </tr>
+                                </tbody>
+            </table>
+
+            </div>
+    </body>
+    </html>
+    

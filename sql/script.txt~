@@ -70,17 +70,3 @@ khoa_hoc_id VARCHAR(255) NOT NULL,
 ghi_chu VARCHAR(255),
 total_time INT(6)
 );
-
-/*table de_tai*/
-CREATE TABLE de_tai (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-ten_dt VARCHAR(255) NOT NULL,
-mota TEXT,
-khoahoc_id INT(6),
-khoa_id INT(6),
-sinhvien_id INT(6),
-giangvien_id INT(6),
-created_at DATE,
-updated_at DATE,
-status INT(2)
-);

@@ -7,6 +7,7 @@ require_once 'model/ChuongTrinhService.php';
 require_once 'model/GVService.php';
 require_once 'model/SVService.php';
 require_once 'model/BoMonService.php';
+require_once 'model/DTService.php';
 
 class IndexController {
     private $indexService = NULL;
@@ -17,6 +18,7 @@ class IndexController {
     private $GVService = NULL;
     private $SVService = NULL;
     private $boMonService = NULL;
+    private $DTService = NULL;
 
     public function __construct() {
         $this->indexService = new IndexService();
@@ -27,6 +29,7 @@ class IndexController {
         $this->GVService = new GVService();
         $this->SVService = new SVService();
         $this->boMonService = new BoMonService();
+        $this->DTService = new DTService();
     }
 
     public function redirect($location, $error='') {
@@ -126,6 +129,24 @@ class IndexController {
                 $this->deleteBoMon();
             } elseif (strpos($op, "bomon_list") !== false) { // pagination
                 $this->listBoMon();
+            } elseif ($op == 'detai_list') {
+                $this->listDeTai();
+            } elseif ($op == 'detai_new') {
+                $this->saveDeTai();
+            } elseif ($op == 'detai_show') {
+                $this->showDeTai();
+            } elseif ($op == 'detai_edit') {
+                $this->editDeTai();
+            } elseif ($op == 'detai_delete') {
+                $this->deleteDeTai();
+            } elseif (strpos($op, "detai_list") !== false) { // pagination
+                $this->listDeTai();
+            } elseif (strpos($op, "khoahoc_detai") !== false) { // pagination
+                $this->listDeTaiKH();
+            } elseif (strpos($op, "khoa_detai") !== false) { // pagination
+                $this->listDeTaiKhoa();
+            }  elseif (strpos($op, "export_dt") !== false) { // pagination
+                $this->exportDT();
             } else {
                 $this->showError("Page not found", "Page for operation ".$op." was not found!");
             }
@@ -799,5 +820,156 @@ class IndexController {
     }
 
     /*END SINH VIEN ACTION ROUTER*/
+
+    /*DE TAI ACTION ROUTER*/
+    public function listDeTai() {
+        $orderby = isset($_GET['orderby'])?$_GET['orderby']:NULL;
+        $totalRecord = $this->DTService->totalRecord();
+        $Pagination = new Pagination();
+        $limit = $Pagination->limit;
+        $start = $Pagination->start();
+        $totalPages = $Pagination->totalPages($totalRecord);
+        $data = $this->DTService->getAll($orderby, $start, $limit);
+        $KHList = $this->khoahocService->getAll('id',0,300);
+        $khoaList = $this->khoaService->getAll('id',0,300);
+        $SVList = $this->SVService->getAll('id',0,300);
+        $GVList = $this->GVService->getAll('id',0,300);
+        include 'view/detai/list.php';
+    }
+
+    public function saveDeTai() {
+        $title = 'Add new';
+        $name = '';
+        $errors = array();
+        if ( isset($_POST['form-submitted']) ) {
+            $ten = isset($_POST['ten']) ?   $_POST['ten']  :NULL;
+            $mota = isset($_POST['mota']) ?   $_POST['mota']  :NULL;
+            $khoahoc  = isset($_POST['khoahoc']) ?   $_POST['khoahoc']  :NULL;
+            $khoa = isset($_POST['khoa']) ?   $_POST['khoa']  :NULL;
+            $sinhvien = isset($_POST['sinhvien']) ?   $_POST['sinhvien']  :NULL;
+            $giangvien = isset($_POST['giangvien']) ?   $_POST['giangvien']  :NULL;
+            $create = date( 'Y-m-d H:i:s');
+            $update = date( 'Y-m-d H:i:s');
+            $status = 1; // 1: nop, 2: rut: 3: hoan thanh, 4: huy bo
+            try {
+                $this->DTService->create( $ten, $mota, $khoahoc, $khoa, $sinhvien, $giangvien, $create, $update, $status );
+                $this->redirect('index.php?op=detai_list');
+                return;
+            } catch (ValidationException $e) {
+                $errors = $e->getErrors();
+            }
+        }
+        $KHList = $this->khoahocService->getAll('id',0,300);
+        $khoaList = $this->khoaService->getAll('id',0,300);
+        $SVList = $this->SVService->getAll('id',0,300);
+        $GVList = $this->GVService->getAll('id',0,300);
+        include 'view/detai/form.php';
+    }
+
+    public function deleteDeTai() {
+        $id = isset($_GET['id'])?$_GET['id']:NULL;
+        if ( !$id ) {
+            throw new Exception('Internal error.');
+        }
+        $this->DTService->delete($id);
+
+        $this->redirect('index.php?op=detai_list');
+    }
+
+    public function showDeTai() {
+        $id = isset($_GET['id'])?$_GET['id']:NULL;
+        if ( !$id ) {
+            throw new Exception('Internal error.');
+        }
+        $data = $this->DTService->getId($id);
+        include 'view/detai/detail.php';
+    }
+
+    public function editDeTai() {
+        $title = 'Edit';
+        $errors = array();
+        $id = isset($_GET['id'])?$_GET['id']:NULL;
+        if ( !$id ) {
+            throw new Exception('Internal error.');
+        }
+        $data = $this->DTService->getId($id);
+        $KHList = $this->khoahocService->getAll('id',0,300);
+        $khoaList = $this->khoaService->getAll('id',0,300);
+        $SVList = $this->SVService->getAll('id',0,300);
+        $GVList = $this->GVService->getAll('id',0,300);
+        if ( isset($_POST['form-submitted']) ) {
+            $ten = isset($_POST['ten']) ?   $_POST['ten']  :NULL;
+            $mota = isset($_POST['mota']) ?   $_POST['mota']  :NULL;
+            $khoahoc  = isset($_POST['khoahoc']) ?   $_POST['khoahoc']  :NULL;
+            $khoa = isset($_POST['khoa']) ?   $_POST['khoa']  :NULL;
+            $sinhvien = isset($_POST['sinhvien']) ?   $_POST['sinhvien']  :NULL;
+            $giangvien = isset($_POST['giangvien']) ?   $_POST['giangvien']  :NULL;
+            $update = date( 'Y-m-d H:i:s');
+            $status = 1; // 1: dangky, 2: rut: 3: hoan thanh, 4: huy bo
+            try {
+                $this->DTService->update($id, $ten, $mota, $khoahoc, $khoa, $sinhvien, $giangvien, $update, $status );
+                $this->redirect('index.php?op=detai_list');
+                return;
+            } catch (ValidationException $e) {
+                $errors = $e->getErrors();
+            }
+        }
+
+        include 'view/detai/form.php';
+    }
+
+    public function listDeTaiKH() {
+        $orderby = isset($_GET['orderby'])?$_GET['orderby']:NULL;
+        $khoahocId = isset($_GET['id'])?$_GET['id']:NULL;
+        $totalRecord = $this->DTService->totalRecord();
+        $Pagination = new Pagination();
+        $limit = $Pagination->limit;
+        $start = $Pagination->start();
+        $totalPages = $Pagination->totalPages($totalRecord);
+        $data = $this->DTService->getAllCond($orderby, $start, $limit, $khoahocId);
+        $KHList = $this->khoahocService->getAll('id',0,300);
+        $khoaList = $this->khoaService->getAll('id',0,300);
+        $SVList = $this->SVService->getAll('id',0,300);
+        $GVList = $this->GVService->getAll('id',0,300);
+        include 'view/detai/list.php';
+    }
+
+    public function listDeTaiKhoa() {
+        $orderby = isset($_GET['orderby'])?$_GET['orderby']:NULL;
+        $khoaId = isset($_GET['id'])?$_GET['id']:NULL;
+        $totalRecord = $this->DTService->totalRecord();
+        $Pagination = new Pagination();
+        $limit = $Pagination->limit;
+        $start = $Pagination->start();
+        $totalPages = $Pagination->totalPages($totalRecord);
+        $data = $this->DTService->getAllCondKhoa($orderby, $start, $limit, $khoaId);
+        $KHList = $this->khoahocService->getAll('id',0,300);
+        $khoaList = $this->khoaService->getAll('id',0,300);
+        $SVList = $this->SVService->getAll('id',0,300);
+        $GVList = $this->GVService->getAll('id',0,300);
+        include 'view/detai/list.php';
+    }
+
+    public function exportDT() {
+        $orderby = isset($_GET['orderby'])?$_GET['orderby']:NULL;
+        $limit = 100000;
+        $start = 0;
+        $data = $this->DTService->getAll($orderby, $start, $limit);
+        $KHList = $this->khoahocService->getAll('id',0,300);
+        $khoaList = $this->khoaService->getAll('id',0,300);
+        $SVList = $this->SVService->getAll('id',0,300);
+        $GVList = $this->GVService->getAll('id',0,300);
+        if ( isset($_POST['form-submitted']) ) {
+            $detaiName = md5(microtime().mt_rand()).'-detai-'.date( 'Y-m-d H:i:s').'.docx';
+            header("Content-Type:application/msword");
+            header("Expires: 0");
+            header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+            header("content-disposition: attachment;filename=$detaiName");
+        }
+
+        include 'view/detai/export.php';
+    }
+
+    /*END DE TAI ACTION ROUTER*/
 }
 ?>

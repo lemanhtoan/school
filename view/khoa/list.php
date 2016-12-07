@@ -22,6 +22,7 @@
                 <td>
                     <a href="index.php?op=khoa_edit&id=<?php echo $item->id; ?>" class="btn btn-info">edit</a>
                     <a href="index.php?op=khoa_delete&id=<?php echo $item->id; ?>" class="btn btn-danger" onclick="return checkDel()">delete</a>
+                    <a href="index.php?op=khoa_detai&id=<?php echo $item->id; ?>" class="btn btn-info">Đề tài</a>
                 </td>
             </tr>
         <?php endforeach; ?>
