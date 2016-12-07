@@ -1,7 +1,7 @@
 <?php
 class Pagination{
 
-    public $limit = 5;
+    public $limit = 2;
     protected $_baseUrl;
 
     public function __construct(){
