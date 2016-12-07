@@ -1,42 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a2b6957-31c9-411c-a5b9-5f6fd1c45258" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/BoMonGateway.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/BoMonService.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/ChuongTrinhGateway.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/ChuongTrinhService.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/GVGateway.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/GVService.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/SVGateway.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/SVService.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/bomon/detail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/bomon/form.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/bomon/list.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/chuongtrinh/detail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/chuongtrinh/form.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/chuongtrinh/list.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/giangvien/detail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/giangvien/form.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/giangvien/list.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/sinhvien/detail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/sinhvien/form.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/sinhvien/list.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model/khoa/KhoaGateway.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model/khoa/KhoaService.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model/khoa/ValidationException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/khoa/khoa-form.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/khoa/khoa.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/khoahoc/khoa-form.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/khoahoc/khoa.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/magicento.xml" afterPath="$PROJECT_DIR$/.idea/magicento.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/IndexController.php" afterPath="$PROJECT_DIR$/controller/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/KhoaService.php" afterPath="$PROJECT_DIR$/model/KhoaService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/include/header.php" afterPath="$PROJECT_DIR$/view/include/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/khoahoc/detail.php" afterPath="$PROJECT_DIR$/view/khoahoc/detail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/khoahoc/list.php" afterPath="$PROJECT_DIR$/view/khoahoc/list.php" />
-    </list>
+    <list default="true" id="9a2b6957-31c9-411c-a5b9-5f6fd1c45258" name="Default" comment="" />
     <ignored path="school.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -491,12 +456,12 @@
       <workItem from="1480516823645" duration="6058000" />
       <workItem from="1480816971318" duration="3458000" />
       <workItem from="1480843257210" duration="2491000" />
-      <workItem from="1480949768234" duration="4112000" />
+      <workItem from="1480949768234" duration="4693000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23070000" />
+    <option name="totallyTimeSpent" value="23651000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="-4" width="1311" height="772" extended-state="6" />
