@@ -38,13 +38,9 @@ footer {
     font-size: 38px;
 }
 
-/*
-body {
-    background: url('../bg.svg') rgba(255,255,255, 0.1);
-    background-size: 100%;
-    background-repeat: no-repeat;
+nav li, nav a {
+    text-transform: capitalize;
 }
-*/
 
 .page-wrap .container {
 	background: #fff;

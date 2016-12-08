@@ -18,19 +18,20 @@
         </div>
         <ul class="nav navbar-nav">
             <li class="dropdown <?php if (strpos($_SERVER['REQUEST_URI'], "user_") !== false) { echo 'active';}?>">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">User
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Người dùng
                     <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <?php if (isset($_SESSION['user_session'])) { ?>
-                    <li><a href="index.php?op=user_info">Profile</a></li>
-                    <li><a href="index.php?op=user_logout">Logout</a></li>
+                    <li><a href="index.php?op=user_info">Thông tin</a></li>
+                    <li><a href="index.php?op=user_logout">Thoát</a></li>
                     <li><a href="index.php?op=user_changepassword">Đổi mật khẩu</a></li>
                     <?php } else { ?>
-                    <li><a href="index.php?op=user_login">Login</a></li>
-                    <li><a href="index.php?op=user_register">Register</a></li>
+                    <li><a href="index.php?op=user_login">Đăng nhập</a></li>
+                    <li><a href="index.php?op=user_register">Đăng ký</a></li>
                     <?php } ?>
                 </ul>
             </li>
+            <?php if (isset($_SESSION['user_session'])) { ?>
             <li>
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Quản lý
                     <span class="caret"></span></a>
@@ -44,15 +45,17 @@
                 </ul>
             </li>
             <li>
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Import/ Export
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nhập/ Xuất dữ liệu
                     <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="index.php?op=import_gv">Import GV</a></li>
-                    <li><a href="index.php?op=import_sv">Import SV</a></li>
-                    <li><a  href="index.php?op=export_dt">Export Đề tài</a></li>
+                    <li><a href="index.php?op=import_gv">Nhập Giảng Viên</a></li>
+                    <li><a href="index.php?op=import_sv">Nhập Sinh Viên</a></li>
+                    <li><a  href="index.php?op=export_dt">Xuất Đề Tài</a></li>
                 </ul>
             </li>
             <li><a href="index.php?op=detai_list">Đề tài</a></li>
+            <li><a href="index.php?op=active_user">Kích hoạt người dùng</a></li>
+            <?php } ?>
         </ul>
     </div>
 </nav>

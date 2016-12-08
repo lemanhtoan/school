@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 08, 2016 at 08:53 PM
--- Server version: 5.6.31-0ubuntu0.14.04.2
--- PHP Version: 5.6.23-1+deprecated+dontuse+deb.sury.org~trusty+1
+-- Generation Time: Dec 08, 2016 at 11:30 PM
+-- Server version: 5.6.33-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -197,9 +197,9 @@ CREATE TABLE IF NOT EXISTS `nguoi_dung` (
 --
 
 INSERT INTO `nguoi_dung` (`id`, `email`, `password`, `thong_tin_khac`, `status`, `user_type`) VALUES
-(1, 'toanktv@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', NULL, 0, 2),
-(2, 'tuanktv@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', NULL, 0, 2),
-(3, 'huyktv@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', NULL, 0, 2);
+(1, 'toanktv@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', NULL, 1, 2),
+(2, 'tuanktv@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', NULL, 0, 1),
+(3, 'huyktv@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', NULL, 0, 3);
 
 -- --------------------------------------------------------
 

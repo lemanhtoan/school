@@ -147,6 +147,8 @@ class IndexController {
                 $this->listDeTaiKhoa();
             }  elseif (strpos($op, "export_dt") !== false) { // pagination
                 $this->exportDT();
+            } elseif (strpos($op, "active_user") !== false) { // pagination
+                $this->activeUser();
             } else {
                 $this->showError("Page not found", "Page for operation ".$op." was not found!");
             }
@@ -280,7 +282,7 @@ class IndexController {
                     $this->redirect('index.php?op=user_info');
                     return;
                 } else {
-                    $errors['login_fail'] = 'Wrong information';
+                    $errors['login_fail'] = 'Sai thông tin đăng nhập';
                 }
             } catch (ValidationException $e) {
                 $errors = $e->getErrors();
@@ -971,5 +973,22 @@ class IndexController {
     }
 
     /*END DE TAI ACTION ROUTER*/
+
+    public function activeUser() {
+        $data = $this->userService->getAllUser();
+        if ( isset($_POST['form-submitted']) ) {
+            if (count($_POST) > 1) {
+                foreach($_POST['check_list'] as $selected){
+                    $this->userService->activeUserStatus($selected);
+                }
+                $info = array('message' => 'Kích hoạt thành công');
+            }
+            else {
+                $errors = array('null' => 'Vui lòng chọn giá trị.');
+            }
+        }
+
+        include 'view/user/active.php';
+    }
 }
 ?>

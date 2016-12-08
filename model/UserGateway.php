@@ -108,6 +108,21 @@ class UserGateway {
         mysql_query("INSERT INTO sinh_vien (ma_sinh_vien, ho_ten, khoa_hoc_id, chuong_trinh_id, email) VALUES ($colMaSV, $colName, $colKhoaHoc, $colCTHoc, $colEmail)");
         return mysql_insert_id();
     }
+
+    public function selectAllUser() {
+        $dbres = mysql_query("SELECT * FROM nguoi_dung WHERE status=0");
+        $data = array();
+        while ( ($obj = mysql_fetch_object($dbres)) != NULL ) {
+            $data[] = $obj;
+        }
+
+        return $data;
+    }
+
+    public function activeUserStatus($id) {
+        mysql_query("UPDATE nguoi_dung SET status = 1 WHERE id = '$id'");
+        return $id;
+    }
 }
 
 ?>

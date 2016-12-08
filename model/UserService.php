@@ -168,6 +168,30 @@ class UserService {
             throw $e;
         }
     }
+
+    public function getAllUser() {
+        try {
+            $this->index->openDb();
+            $res = $this->userGateway->selectAllUser();
+            $this->index->closeDb();
+            return $res;
+        } catch (Exception $e) {
+            $this->index->closeDb();
+            throw $e;
+        }
+    }
+
+    public function activeUserStatus($id) {
+        try {
+            $this->index->openDb();
+            $res = $this->userGateway->activeUserStatus($id);
+            $this->index->closeDb();
+            return $res;
+        } catch (Exception $e) {
+            $this->index->closeDb();
+            throw $e;
+        }
+    }
     
 }
 

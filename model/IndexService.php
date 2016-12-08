@@ -4,7 +4,7 @@ session_start();
 class IndexService {
     
     public function openDb() {
-        $conn = mysql_connect("localhost", "root", "11111"); //123456a@
+        $conn = mysql_connect("localhost", "root", "123456a@"); //123456a@ 11111
         if (!$conn) {
             throw new Exception("Connection to the database server failed!");
         }
