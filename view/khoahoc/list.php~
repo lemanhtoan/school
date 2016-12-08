@@ -3,9 +3,6 @@
     $Pagination = new Pagination();
 ?>
 <div class="container">
-<div class="jumbotron">
-        <h1>Khóa học</h1>
-    </div>
     <div><a href="index.php?op=khoahoc_new" class="btn btn-info">Add new</a></div>
     <?php if ( count($data) > 0 ) { ?>
 
