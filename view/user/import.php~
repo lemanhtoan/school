@@ -24,7 +24,7 @@
         print '</ul>';
     }
     ?>
-
+    ?>
     <form method="POST" action="" enctype="multipart/form-data">
         <div class="form-group">
             <label for="name">File</label>
