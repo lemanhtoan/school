@@ -19,10 +19,10 @@ class IndexService {
     }
 
     public function checkActive($hash) {       
-	$dbres = mysql_query("SELECT * FROM user_verified WHERE hash=$hash AND active = '0'");
+	   $dbres = mysql_query("SELECT * FROM user_verified WHERE hash=$hash AND active = '0'");
         if (mysql_fetch_object($dbres)) {
-	    mysql_query("UPDATE user_verified SET active = 1 WHERE hash = '$hash'");
-	}	
+    	    mysql_query("UPDATE user_verified SET active = 1 WHERE hash = '$hash'");
+    	}	
     }
 }
 ?>

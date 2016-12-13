@@ -37,7 +37,8 @@ class IndexController {
     }
 
     public function handleRequest() {
-        $op = isset($_GET['op'])?$_GET['op']:NULL;
+
+        $op = isset($_GET['op'])?$_GET['op']:NULL;        
         try {
             if ( !$op ) {
                 $this->indexPage();
@@ -157,14 +158,51 @@ class IndexController {
         }
     }
 
+    public function returnRole($ss) {
+        if (sizeof ((array) $ss) > 1) {
+            $roleType = $ss->user_type;
+            if ($roleType == '4') {
+                //sv
+                $arrData = array('sv_list', 'sv_new', 'sv_show', 'sv_edit', 'sv_delete');
+                return $arrData;
+            }elseif($roleType == '3') {
+                //gv
+                $arrData = array('gv_list', 'gv_new', 'gv_show', 'gv_edit', 'gv_delete');
+                return $arrData;
+            }elseif($roleType == '2') {
+                //khoa
+                $arrData = array('khoa_list', 'khoa_new', 'khoa_show', 'khoa_edit', 'khoa_delete');
+                return $arrData;
+            } else {
+                //nhatruong
+                $arrData = array('khoa_list','khoa_new','khoa_show','khoa_edit','khoa_delete','user_register','user_login','user_info','user_logout','import_gv','user_changepassword','user_edit','import_sv','khoahoc_list','khoahoc_new','khoahoc_show','khoahoc_edit','khoahoc_delete','chuongtrinh_list','chuongtrinh_new','chuongtrinh_show','chuongtrinh_edit','chuongtrinh_delete','gv_list','gv_new','gv_show','gv_edit','gv_delete','gv_list','sv_list','sv_new','sv_show','sv_edit','sv_delete','bomon_list','bomon_new','bomon_show','bomon_edit','bomon_delete','detai_list','detai_new','detai_show','detai_edit','detai_delete','khoahoc_detai','khoa_detai','export_dt','active_user');
+                return $arrData;
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public function ssInit() {
+        if (!isset($_SESSION['user_session'])) {
+            $ss = "";
+        } else {
+            $ss = $_SESSION['user_session'];
+        } 
+        $role = $this->returnRole($ss);
+        return $role;
+    }
+
     /*INDEX PAGE*/
     public function indexPage()
     {
+        $role = $this->ssInit();
         include 'view/home.php';
     }
 
     /*KHOA ACTION ROUTER*/
     public function listKhoa() {
+        $role = $this->ssInit();
         $orderby = isset($_GET['orderby'])?$_GET['orderby']:NULL;
         $totalRecord = $this->khoaService->totalRecord();
         $Pagination = new Pagination();
@@ -176,6 +214,7 @@ class IndexController {
     }
 
     public function saveKhoa() {
+        $role = $this->ssInit();
         $title = 'Add new';
         $name = '';
         $errors = array();
@@ -193,6 +232,7 @@ class IndexController {
     }
 
     public function deleteKhoa() {
+        $role = $this->ssInit();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
         if ( !$id ) {
             throw new Exception('Internal error.');
@@ -203,6 +243,7 @@ class IndexController {
     }
 
     public function showKhoa() {
+        $role = $this->ssInit();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
         if ( !$id ) {
             throw new Exception('Internal error.');
@@ -212,6 +253,7 @@ class IndexController {
     }
 
     public function editKhoa() {
+        $role = $this->ssInit();
         $title = 'Edit';
         $name = '';
         $errors = array();
@@ -241,6 +283,7 @@ class IndexController {
     /*USER*/
     public function saveUser()
     {
+        $role = $this->ssInit();
         $title = 'Register';
         $email = $password = $other = '';
         $errors = array();
@@ -271,6 +314,7 @@ class IndexController {
     }
 
     public function loginUser() {
+        $role = $this->ssInit();
         $title = 'Login';
         $errors = array();
         if ( isset($_POST['form-submitted']) ) {
@@ -292,16 +336,19 @@ class IndexController {
     }
 
     public function infoUser() {
+        $role = $this->ssInit();
         include 'view/user/detail.php';
     }
 
     public function logoutUser() {
+        $role = $this->ssInit();
         session_destroy();
         unset($_SESSION['user_session']);
         $this->redirect('index.php');
     }
 
     public function importUser() {
+        $role = $this->ssInit();
         $errors = array();
         if ( isset($_POST['form-submitted']) ) {
             if(isset($_FILES['spreadsheet'])){
@@ -347,6 +394,7 @@ class IndexController {
 
     public function changePassUser()
     {
+        $role = $this->ssInit();
         $errors = array();
         if ( isset($_POST['form-submitted']) ) {
             $password       = isset($_POST['password']) ?   $_POST['password']  :NULL;
@@ -363,6 +411,7 @@ class IndexController {
     }
 
     public function importSV() {
+        $role = $this->ssInit();
         $errors = array();
         if ( isset($_POST['form-submitted']) ) {
             if(isset($_FILES['spreadsheet'])){
@@ -408,6 +457,7 @@ class IndexController {
 
     /*KHOA HOC ACTION ROUTER*/
     public function listKhoaHoc() {
+        $role = $this->ssInit();
         $orderby = isset($_GET['orderby'])?$_GET['orderby']:NULL;
         $totalRecord = $this->khoahocService->totalRecord();
         $Pagination = new Pagination();
@@ -420,6 +470,7 @@ class IndexController {
     }
 
     public function saveKhoaHoc() {
+        $role = $this->ssInit();
         $title = 'Add new';
         $name = '';
         $errors = array();
@@ -443,6 +494,7 @@ class IndexController {
     }
 
     public function deleteKhoaHoc() {
+        $role = $this->ssInit();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
         if ( !$id ) {
             throw new Exception('Internal error.');
@@ -453,6 +505,7 @@ class IndexController {
     }
 
     public function showKhoaHoc() {
+        $role = $this->ssInit();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
         if ( !$id ) {
             throw new Exception('Internal error.');
@@ -462,6 +515,7 @@ class IndexController {
     }
 
     public function editKhoaHoc() {
+        $role = $this->ssInit();
         $title = 'Edit';
         $errors = array();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
@@ -493,6 +547,7 @@ class IndexController {
 
     /*BO MON ACTION ROUTER*/
     public function listBoMon() {
+        $role = $this->ssInit();
         $orderby = isset($_GET['orderby'])?$_GET['orderby']:NULL;
         $totalRecord = $this->boMonService->totalRecord();
         $Pagination = new Pagination();
@@ -505,6 +560,7 @@ class IndexController {
     }
 
     public function saveBoMon() {
+        $role = $this->ssInit();
         $title = 'Add new';
         $name = '';
         $errors = array();
@@ -525,6 +581,7 @@ class IndexController {
     }
 
     public function deleteBoMon() {
+        $role = $this->ssInit();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
         if ( !$id ) {
             throw new Exception('Internal error.');
@@ -535,6 +592,7 @@ class IndexController {
     }
 
     public function showBoMon() {
+        $role = $this->ssInit();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
         if ( !$id ) {
             throw new Exception('Internal error.');
@@ -544,6 +602,7 @@ class IndexController {
     }
 
     public function editBoMon() {
+        $role = $this->ssInit();
         $title = 'Edit';
         $errors = array();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
@@ -572,6 +631,7 @@ class IndexController {
 
     /*CHUONG TRINH ACTION ROUTER*/
     public function listChuongTrinh() {
+        $role = $this->ssInit();
         $orderby = isset($_GET['orderby'])?$_GET['orderby']:NULL;
         $totalRecord = $this->chuongtrinhService->totalRecord();
         $Pagination = new Pagination();
@@ -584,6 +644,7 @@ class IndexController {
     }
 
     public function saveChuongTrinh() {
+        $role = $this->ssInit();
         $title = 'Add new';
         $name = '';
         $errors = array();
@@ -605,6 +666,7 @@ class IndexController {
     }
 
     public function deleteChuongTrinh() {
+        $role = $this->ssInit();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
         if ( !$id ) {
             throw new Exception('Internal error.');
@@ -615,6 +677,7 @@ class IndexController {
     }
 
     public function showChuongTrinh() {
+        $role = $this->ssInit();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
         if ( !$id ) {
             throw new Exception('Internal error.');
@@ -624,6 +687,7 @@ class IndexController {
     }
 
     public function editChuongTrinh() {
+        $role = $this->ssInit();
         $title = 'Edit';
         $errors = array();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
@@ -653,6 +717,7 @@ class IndexController {
 
     /*GIAO VIEN ACTION ROUTER*/
     public function listGV() {
+        $role = $this->ssInit();
         $orderby = isset($_GET['orderby'])?$_GET['orderby']:NULL;
         $totalRecord = $this->GVService->totalRecord();
         $Pagination = new Pagination();
@@ -666,6 +731,7 @@ class IndexController {
     }
 
     public function saveGV() {
+        $role = $this->ssInit();
         $title = 'Add new';
         $name = '';
         $errors = array();
@@ -689,6 +755,7 @@ class IndexController {
     }
 
     public function deleteGV() {
+        $role = $this->ssInit();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
         if ( !$id ) {
             throw new Exception('Internal error.');
@@ -699,6 +766,7 @@ class IndexController {
     }
 
     public function showGV() {
+        $role = $this->ssInit();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
         if ( !$id ) {
             throw new Exception('Internal error.');
@@ -708,6 +776,7 @@ class IndexController {
     }
 
     public function editGV() {
+        $role = $this->ssInit();
         $title = 'Edit';
         $errors = array();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
@@ -739,6 +808,7 @@ class IndexController {
 
     /*SINH VIEN ACTION ROUTER*/
     public function listSV() {
+        $role = $this->ssInit();
         $orderby = isset($_GET['orderby'])?$_GET['orderby']:NULL;
         $totalRecord = $this->SVService->totalRecord();
         $Pagination = new Pagination();
@@ -752,6 +822,7 @@ class IndexController {
     }
 
     public function saveSV() {
+        $role = $this->ssInit();
         $title = 'Add new';
         $name = '';
         $errors = array();
@@ -775,6 +846,7 @@ class IndexController {
     }
 
     public function deleteSV() {
+        $role = $this->ssInit();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
         if ( !$id ) {
             throw new Exception('Internal error.');
@@ -785,6 +857,7 @@ class IndexController {
     }
 
     public function showSV() {
+        $role = $this->ssInit();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
         if ( !$id ) {
             throw new Exception('Internal error.');
@@ -794,6 +867,7 @@ class IndexController {
     }
 
     public function editSV() {
+        $role = $this->ssInit();
         $title = 'Edit';
         $errors = array();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
@@ -825,6 +899,7 @@ class IndexController {
 
     /*DE TAI ACTION ROUTER*/
     public function listDeTai() {
+        $role = $this->ssInit();
         $orderby = isset($_GET['orderby'])?$_GET['orderby']:NULL;
         $totalRecord = $this->DTService->totalRecord();
         $Pagination = new Pagination();
@@ -840,6 +915,7 @@ class IndexController {
     }
 
     public function saveDeTai() {
+        $role = $this->ssInit();
         $title = 'Add new';
         $name = '';
         $errors = array();
@@ -869,6 +945,7 @@ class IndexController {
     }
 
     public function deleteDeTai() {
+        $role = $this->ssInit();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
         if ( !$id ) {
             throw new Exception('Internal error.');
@@ -879,6 +956,7 @@ class IndexController {
     }
 
     public function showDeTai() {
+        $role = $this->ssInit();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
         if ( !$id ) {
             throw new Exception('Internal error.');
@@ -888,6 +966,7 @@ class IndexController {
     }
 
     public function editDeTai() {
+        $role = $this->ssInit();
         $title = 'Edit';
         $errors = array();
         $id = isset($_GET['id'])?$_GET['id']:NULL;
@@ -921,6 +1000,7 @@ class IndexController {
     }
 
     public function listDeTaiKH() {
+        $role = $this->ssInit();
         $orderby = isset($_GET['orderby'])?$_GET['orderby']:NULL;
         $khoahocId = isset($_GET['id'])?$_GET['id']:NULL;
         $totalRecord = $this->DTService->totalRecord();
@@ -937,6 +1017,7 @@ class IndexController {
     }
 
     public function listDeTaiKhoa() {
+        $role = $this->ssInit();
         $orderby = isset($_GET['orderby'])?$_GET['orderby']:NULL;
         $khoaId = isset($_GET['id'])?$_GET['id']:NULL;
         $totalRecord = $this->DTService->totalRecord();
@@ -953,6 +1034,7 @@ class IndexController {
     }
 
     public function exportDT() {
+        $role = $this->ssInit();
         $orderby = isset($_GET['orderby'])?$_GET['orderby']:NULL;
         $limit = 100000;
         $start = 0;
@@ -975,6 +1057,7 @@ class IndexController {
     /*END DE TAI ACTION ROUTER*/
 
     public function activeUser() {
+        $role = $this->ssInit();
         $data = $this->userService->getAllUser();
         if ( isset($_POST['form-submitted']) ) {
             if (count($_POST) > 1) {
