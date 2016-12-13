@@ -110,7 +110,7 @@ class UserGateway {
     }
 
     public function selectAllUser() {
-        $dbres = mysql_query("SELECT * FROM nguoi_dung WHERE status=0 ORDER BY user_type ASC");
+        $dbres = mysql_query("SELECT * FROM nguoi_dung WHERE status=0");
         $data = array();
         while ( ($obj = mysql_fetch_object($dbres)) != NULL ) {
             $data[] = $obj;

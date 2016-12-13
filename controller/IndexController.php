@@ -1,4 +1,7 @@
 <?php
+// Turn off all error reporting
+error_reporting(0);
+
 require_once 'model/KhoaService.php';
 require_once 'model/UserService.php';
 require_once 'model/Pagination.php';
@@ -378,6 +381,7 @@ class IndexController {
                                 }
                             }
                             fclose($file);
+				$info = array('message' => 'Nhập danh sách thành công');
                         }
                         else{
                             echo "Please upload an XLSX or ODS file";
@@ -441,6 +445,7 @@ class IndexController {
                                 }
                             }
                             fclose($file);
+				$info = array('message' => 'Nhập danh sách thành công');
                         }
                         else{
                             echo "Please upload an XLSX or ODS file";

@@ -58,7 +58,6 @@
 </div>
 <?php if ( isset($info) ) { ?>
 <script>
-// refresh page after submit
 setTimeout(function(){
      window.location = window.location.href;
 }, 1000);
