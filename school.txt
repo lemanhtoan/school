@@ -1,0 +1,3 @@
+- dung ma sinh vien de login
+- fill du lieu chon default sinhvien login khi dang ky detai
+- khi them sinhvien => can them nguoi dung de active

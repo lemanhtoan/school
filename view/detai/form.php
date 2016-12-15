@@ -41,12 +41,18 @@
 
         <div class="form-group">
             <label for="name">Tên Sinh Viên</label>
+            <?php if (isset($sv)) {  ?>
+            <select name="sinhvien" id="" class="form-control" disabled="true">
+                <option  selected='selected' value="<?php echo $sv['id']; ?>"><?php echo $sv['ho_ten']; ?></option>
+            </select>
+            <?php } else { ?>
             <select name="sinhvien" id="" class="form-control">
                 <option value=""></option>
-                <?php foreach ($SVList as $kh) :?>
+                <?php  foreach ($SVList as $kh) :?>
                     <option <?php if (isset($data)) { if ($data->sinhvien_id == $kh->id) {echo 'selected';} } ?> value="<?php echo $kh->id; ?>"><?php echo $kh->ho_ten; ?></option>
                 <?php endforeach; ?>
             </select>
+            <?php } ?>
         </div>
 
         <div class="form-group">

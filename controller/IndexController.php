@@ -166,7 +166,7 @@ class IndexController {
             $roleType = $ss->user_type;
             if ($roleType == '4') {
                 //sv
-                $arrData = array('sv_list', 'sv_new', 'sv_show', 'sv_edit', 'sv_delete');
+                $arrData = array('sv_list', 'sv_new', 'sv_show', 'sv_edit', 'sv_delete','detai_list','detai_new');
                 return $arrData;
             }elseif($roleType == '3') {
                 //gv
@@ -945,6 +945,13 @@ class IndexController {
         $KHList = $this->khoahocService->getAll('id',0,300);
         $khoaList = $this->khoaService->getAll('id',0,300);
         $SVList = $this->SVService->getAll('id',0,300);
+
+        if (isset($_SESSION['user_session'])) {
+            $userType = $_SESSION['user_session']->user_type;
+            if ($userType == '4') {
+                $sv = $this->SVService->getSV($_SESSION['user_session']->email);
+            }
+        }
         $GVList = $this->GVService->getAll('id',0,300);
         include 'view/detai/form.php';
     }

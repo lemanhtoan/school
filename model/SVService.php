@@ -47,7 +47,18 @@ class SVService {
             $this->index->closeDb();
             throw $e;
         }
-        return $this->contactsGateway->find($id);
+    }
+
+    public function getSV($email) {
+        try {
+            $this->index->openDb();
+            $res = $this->SVGateway->selectByEmail($email);
+            $this->index->closeDb();
+            return $res;
+        } catch (Exception $e) {
+            $this->index->closeDb();
+            throw $e;
+        }
     }
     
     private function validateParams( $name) {

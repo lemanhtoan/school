@@ -2,15 +2,18 @@
 require_once 'model/IndexService.php';
 require_once 'model/UserGateway.php';
 require_once 'model/ValidationException.php';
+require_once 'model/SVGateway.php';
 
 
 class UserService {
     private $index = NULL;
     private $userGateway    = NULL;
+    private $SVGateway    = NULL;
 
     public function __construct() {
         $this->index = new IndexService();
         $this->userGateway = new UserGateway();
+        $this->SVGateway = new SVGateway();
     }
 
     public function getId($id) {
@@ -44,6 +47,10 @@ class UserService {
             $res = $this->userGateway->insert($email, $password, $userTypeId, $other);
             if ($res == 'USER_EXIST') {
                 return $res;
+            }
+
+            if ($userTypeId == '4') {
+                $res = $this->SVGateway->insert( rand(1, 100000), $email, $email, '', '' );
             }
             // sent email active link - later
             $resUser = $this->userGateway->selectById($res);

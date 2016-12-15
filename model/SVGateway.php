@@ -25,6 +25,12 @@ class SVGateway {
         $dbres = mysql_query("SELECT * FROM sinh_vien WHERE id=$dbId");
         return mysql_fetch_object($dbres);
     }
+
+    public function selectByEmail($email) {
+        $email = ($email != NULL)?"'".mysql_real_escape_string($email)."'":'NULL';
+        $dbres = mysql_query("SELECT * FROM sinh_vien WHERE email=$email");
+        return mysql_fetch_array($dbres);
+    }
     
     public function insert( $ma, $ten, $email, $khoahoc, $chuongtrinhhoc ) {
         $ma = ($ma != NULL)?"'".mysql_real_escape_string($ma)."'":'NULL';
