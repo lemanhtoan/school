@@ -8,7 +8,8 @@
     </div>
     <?php if (isset($_SESSION['user_session'])) { ?>
         <?php if ( count($data) > 0 ) { ?>
-            <?php $count = 0; foreach ($data as $item): $i++; if ($_SESSION['user_session']->id == $item->sinhvien_id): $count++; ?>
+            <?php $count = 0; foreach ($data as $item): $i++; 
+            if ($_SESSION['user_session']->email == $item->svEmail): $count++; ?>
             <?php endif; endforeach;?>
     <?php } }?>
     <?php if ($count != '1') :?>

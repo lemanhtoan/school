@@ -11,7 +11,7 @@ class DTGateway {
             $order = "ten_dt";
         }
         $dbOrder =  mysql_real_escape_string($order);
-        $dbres = mysql_query("SELECT * FROM de_tai ORDER BY $dbOrder ASC limit {$start},{$limit}");
+        $dbres = mysql_query("SELECT de_tai.*, sinh_vien.email as svEmail FROM de_tai LEFT JOIN sinh_vien ON sinh_vien.id = de_tai.sinhvien_id ORDER BY $dbOrder ASC limit {$start},{$limit}");
         $data = array();
         while ( ($obj = mysql_fetch_object($dbres)) != NULL ) {
             $data[] = $obj;
