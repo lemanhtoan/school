@@ -36,7 +36,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?php $i = 0; foreach ($data as $item): $i++; if ($_SESSION['user_session']->id == $item->sinhvien_id): ?>
+                <?php $i = 0; foreach ($data as $item): $i++; if ($_SESSION['user_session']->email == $item->svEmail): ?>
                     <tr>
                         <td><?php echo $i;?></td>
                         <td><a href="index.php?op=detai_show&id=<?php echo $item->id; ?>"><?php echo $item->ten_dt; ?></a></td>
