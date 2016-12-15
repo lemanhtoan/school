@@ -5,7 +5,7 @@
     <title>School</title>
     <link rel="stylesheet" href="libs/css/bootstrap.min.css">
     <link rel="stylesheet" href="libs/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="libs/js/jquery.min.js"></script>
     <script src="libs/js/bootstrap.min.js"></script>
     <script src="libs/js/bootstrap-datepicker.js"></script>
     <script src="libs/js/script.js"></script>
@@ -44,15 +44,17 @@
                     <li><?php if (in_array('sv_list', $role)): ?><a href="index.php?op=sv_list">Sinh Viên</a> <?php endif;?></li>
                 </ul>
             </li>
+            <?php if ( $_SESSION['user_session']->user_type != '4' ) { ?>
             <li>
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nhập/ Xuất dữ liệu
                     <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><?php if (in_array('import_gv', $role)): ?><a href="index.php?op=import_gv">Nhập Giảng Viên</a><?php endif;?></li>
-                    <li><?php if (in_array('import_sv', $role)): ?><a href="index.php?op=import_sv">Nhập Sinh Viên</a><?php endif;?></li>
-                    <li><?php if (in_array('export_dt', $role)): ?><a  href="index.php?op=export_dt">Xuất Đề Tài</a><?php endif;?></li>
+                    <li><a href="index.php?op=import_gv">Nhập Giảng Viên</a></li>
+                    <li><a href="index.php?op=import_sv">Nhập Sinh Viên</a></li>
+                    <li><a  href="index.php?op=export_dt">Xuất Đề Tài</a></li>
                 </ul>
             </li>
+            <?php } ?>
             <li><?php if (in_array('detai_list', $role)): ?><a href="index.php?op=detai_list">Đề tài</a><?php endif;?></li>
             <li><?php if (in_array('active_user', $role)): ?><a href="index.php?op=active_user">Kích hoạt người dùng</a><?php endif;?></li>
             <?php } ?>

@@ -42,9 +42,10 @@
         <div class="form-group">
             <label for="name">Tên Sinh Viên</label>
             <?php if (isset($sv)) {  ?>
-            <select name="sinhvien" id="" class="form-control" disabled="true">
-                <option  selected='selected' value="<?php echo $sv['id']; ?>"><?php echo $sv['ho_ten']; ?></option>
+            <select name="" id="" class="form-control" disabled>
+                <option  value="<?php echo $sv['id']; ?>"><?php echo $sv['ho_ten']; ?></option>
             </select>
+            <input type="hidden" name="sinhvien" value="<?php echo $sv['id']; ?>"/>
             <?php } else { ?>
             <select name="sinhvien" id="" class="form-control">
                 <option value=""></option>

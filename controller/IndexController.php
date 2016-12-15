@@ -166,18 +166,10 @@ class IndexController {
             $roleType = $ss->user_type;
             if ($roleType == '4') {
                 //sv
-                $arrData = array('sv_list', 'sv_new', 'sv_show', 'sv_edit', 'sv_delete','detai_list','detai_new');
-                return $arrData;
-            }elseif($roleType == '3') {
-                //gv
-                $arrData = array('gv_list', 'gv_new', 'gv_show', 'gv_edit', 'gv_delete');
-                return $arrData;
-            }elseif($roleType == '2') {
-                //khoa
-                $arrData = array('khoa_list', 'khoa_new', 'khoa_show', 'khoa_edit', 'khoa_delete');
+                $arrData = array('sv_list', 'sv_show', 'sv_edit', 'sv_delete','detai_list','detai_new', 'sv_viewlist', 'sv_dtlist');
                 return $arrData;
             } else {
-                //nhatruong
+                //khoa, giangvien, nhatruong
                 $arrData = array('khoa_list','khoa_new','khoa_show','khoa_edit','khoa_delete','user_register','user_login','user_info','user_logout','import_gv','user_changepassword','user_edit','import_sv','khoahoc_list','khoahoc_new','khoahoc_show','khoahoc_edit','khoahoc_delete','chuongtrinh_list','chuongtrinh_new','chuongtrinh_show','chuongtrinh_edit','chuongtrinh_delete','gv_list','gv_new','gv_show','gv_edit','gv_delete','gv_list','sv_list','sv_new','sv_show','sv_edit','sv_delete','bomon_list','bomon_new','bomon_show','bomon_edit','bomon_delete','detai_list','detai_new','detai_show','detai_edit','detai_delete','khoahoc_detai','khoa_detai','export_dt','active_user');
                 return $arrData;
             }
@@ -301,6 +293,20 @@ class IndexController {
                     $this->redirect('index.php', '?op=user_register&error=exist');
                     return false;
                 }
+		if ($userTypeId == '3') {
+			$ten       = isset($_POST['tengv']) ?   $_POST['tengv']  :NULL;
+			$khoaId       = isset($_POST['khoa']) ?   $_POST['khoa']  :NULL;
+			$ma       = isset($_POST['magv']) ?   $_POST['magv']  :NULL;
+			$bomon       = isset($_POST['bomon']) ?   $_POST['bomon']  :NULL;
+                	$this->GVService->create( $ma, $ten, $khoaId, $bomon , $email);
+		}
+		if ($userTypeId == '4') {
+			$ma = isset($_POST['masv']) ?   $_POST['masv']  :NULL;
+			$ten       = isset($_POST['tensv']) ?   $_POST['tensv']  :NULL;
+			$khoahoc      = isset($_POST['khoahoc']) ?   $_POST['khoahoc']  :NULL;
+			$chuongtrinhhoc      = isset($_POST['chuongtrinhhoc']) ?   $_POST['chuongtrinhhoc']  :NULL;
+			$this->SVService->create( $ma, $ten, $email, $khoahoc, $chuongtrinhhoc );
+		}
                 $this->redirect('index.php');
                 return;
             } catch (ValidationException $e) {
@@ -313,6 +319,12 @@ class IndexController {
             3 => 'Giảng viên',
             4 => 'Sinh viên',
         );
+	
+	// get data to form 
+	$KHList = $this->khoahocService->getAll('id',0,300);
+        $CTList = $this->chuongtrinhService->getAll('id',0,300);
+	$khoaList = $this->khoaService->getAll('id',0,300);
+        $BMList = $this->boMonService->getAll('id',0,300);
         include 'view/user/form.php';
     }
 
@@ -321,10 +333,20 @@ class IndexController {
         $title = 'Login';
         $errors = array();
         if ( isset($_POST['form-submitted']) ) {
-            $email       = isset($_POST['email']) ?   $_POST['email']  :NULL;
             $password       = isset($_POST['password']) ?   $_POST['password']  :NULL;
+            $type       = isset($_POST['userTypeId']) ?   $_POST['userTypeId']  :NULL;
+            // echo "<pre>"; var_dump($_POST);die;
+            if ($type == '1' || $type == '2') {
+                $email       = isset($_POST['username']) ?   $_POST['username']  :NULL;
+            }
+            if ($type == '3') {
+                $email       = isset($_POST['usernameGv']) ?   $_POST['usernameGv']  :NULL;
+            }
+            if ($type == '4') {
+                $email       = isset($_POST['usernameSv']) ?   $_POST['usernameSv']  :NULL;
+            }
             try {
-                $this->userService->login($email, $password);
+                $this->userService->login($email, $password, $type);
                 if (count($_SESSION) > 0) {
                     $this->redirect('index.php?op=user_info');
                     return;
@@ -335,6 +357,12 @@ class IndexController {
                 $errors = $e->getErrors();
             }
         }
+        $userType = array(
+            1 => 'Nhà trường',
+            2 => 'Khoa',
+            3 => 'Giảng viên',
+            4 => 'Sinh viên',
+        );
         include 'view/user/login.php';
     }
 
@@ -748,6 +776,12 @@ class IndexController {
             $email       = isset($_POST['email']) ?   $_POST['email']  :NULL;
             try {
                 $this->GVService->create( $ma, $ten, $khoaId, $bomon , $email);
+
+        		$password       = '123456';
+        		$userTypeId       = 3;
+        		$other       = isset($_POST['other']) ?   $_POST['other']  :NULL;
+                $create = $this->userService->create($email, $password, $userTypeId, $other);
+
                 $this->redirect('index.php?op=gv_list');
                 return;
             } catch (ValidationException $e) {
@@ -839,6 +873,12 @@ class IndexController {
             $chuongtrinhhoc      = isset($_POST['chuongtrinhhoc']) ?   $_POST['chuongtrinhhoc']  :NULL;
             try {
                 $this->SVService->create( $ma, $ten, $email, $khoahoc, $chuongtrinhhoc );
+
+        		$password       = '123456';
+        		$userTypeId       = 4;
+        		$other       = isset($_POST['other']) ?   $_POST['other']  :NULL;
+                $create = $this->userService->create($email, $password, $userTypeId, $other);
+
                 $this->redirect('index.php?op=sv_list');
                 return;
             } catch (ValidationException $e) {
@@ -989,6 +1029,12 @@ class IndexController {
         $KHList = $this->khoahocService->getAll('id',0,300);
         $khoaList = $this->khoaService->getAll('id',0,300);
         $SVList = $this->SVService->getAll('id',0,300);
+        if (isset($_SESSION['user_session'])) {
+            $userType = $_SESSION['user_session']->user_type;
+            if ($userType == '4') {
+                $sv = $this->SVService->getSV($_SESSION['user_session']->email);
+            }
+        }
         $GVList = $this->GVService->getAll('id',0,300);
         if ( isset($_POST['form-submitted']) ) {
             $ten = isset($_POST['ten']) ?   $_POST['ten']  :NULL;

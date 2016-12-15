@@ -49,9 +49,6 @@ class UserService {
                 return $res;
             }
 
-            if ($userTypeId == '4') {
-                $res = $this->SVGateway->insert( rand(1, 100000), $email, $email, '', '' );
-            }
             // sent email active link - later
             $resUser = $this->userGateway->selectById($res);
             //$this->verifiedEmail($resUser->email);/////////////////////////later email
@@ -88,10 +85,10 @@ class UserService {
         }
     }
 
-    public function login( $email, $password ) {
+    public function login( $email, $password, $type ) {
         try {
             $this->index->openDb();
-            $res = $this->userGateway->login( $email, $password );
+            $res = $this->userGateway->login( $email, $password, $type );
             $this->index->closeDb();
         } catch (Exception $e) {
             $this->index->closeDb();

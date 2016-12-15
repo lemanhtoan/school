@@ -117,6 +117,5 @@ jQuery(document).ready(function($){
 			$('#sectionSv').show();
 		} else { $('#sectionSv').hide(); }
 	});
-});
 </script>
 <?php require_once(realpath($_SERVER["DOCUMENT_ROOT"]) .'/school/view/include/footer.php');?>

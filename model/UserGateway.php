@@ -37,12 +37,20 @@ class UserGateway {
         mysql_query("DELETE FROM khoa WHERE id=$dbId");
     }
 
-    public function login($email, $password) {
+    public function login($email, $password, $type) {
         try
         {
             $dbEmail = ($email != NULL)?"'".mysql_real_escape_string($email)."'":'NULL';
             $dbPassword = ($password != NULL)?"'".mysql_real_escape_string($password)."'":'NULL';
-            $dbres = mysql_query("SELECT * FROM nguoi_dung WHERE email=$dbEmail AND password=md5($dbPassword) AND status=1");
+            if ($type == '1' || $type == '2') {
+               $dbres = mysql_query("SELECT * FROM nguoi_dung WHERE email=$dbEmail AND password=md5($dbPassword) AND status=1"); 
+            }
+            if ($type == '3') {
+                $dbres = mysql_query("SELECT *  FROM  `giang_vien`  LEFT JOIN nguoi_dung ON nguoi_dung.email = giang_vien.email WHERE giang_vien.ma_giang_vien = $dbEmail AND nguoi_dung.password=md5($dbPassword) AND nguoi_dung.status=1 AND nguoi_dung.user_type=3");
+            } 
+            if ($type == '4') {
+                $dbres = mysql_query("SELECT *  FROM  `sinh_vien`  LEFT JOIN nguoi_dung ON nguoi_dung.email = sinh_vien.email WHERE sinh_vien.ma_sinh_vien = $dbEmail AND nguoi_dung.password=md5($dbPassword) AND nguoi_dung.status=1 AND nguoi_dung.user_type=4");
+            }   
 
             if(mysql_num_rows($dbres) > 0)
             {
